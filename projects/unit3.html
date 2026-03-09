@@ -151,6 +151,76 @@ draw_sierpinski(my_turtle, 4, 400)</code></pre>
       </section>
 
       <section class="project-section">
+        <h2>Lesson: Intro to Machine Learning</h2>
+        
+        <h3>Task Description</h3>
+        <p>As part of the CS & AI Club at my school, I designed and led lessons to introduce my classmates to the fundamentals of machine learning. The lessons covered the difference between <strong>supervised learning</strong> (learning from labeled data) and <strong>unsupervised learning</strong> (finding patterns in unlabeled data), along with real-world applications of each approach.</p>
+        
+        <h3>My Approach</h3>
+        <p>I created presentation materials explaining key ML concepts, then followed up with a hands-on coding activity where students built and trained a <strong>Convolutional Neural Network (CNN)</strong> to classify handwritten digits using the MNIST dataset. I chose PyTorch as the framework because of its intuitive syntax and strong educational resources. The activity demonstrated the full ML pipeline: loading data, defining a model architecture, training with backpropagation, and making predictions on new images.</p>
+        
+        <h3>Code Snippet - CNN Model Architecture</h3>
+        <pre><code># Model definition (simple CNN for MNIST)
+class MNISTCNN(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.features = nn.Sequential(
+            nn.Conv2d(1, 32, kernel_size=3, padding=1),  # 28x28 -> 28x28
+            nn.ReLU(),
+            nn.MaxPool2d(2),  # 28x28 -> 14x14
+            nn.Conv2d(32, 64, kernel_size=3, padding=1),  # 14x14 -> 14x14
+            nn.ReLU(),
+            nn.MaxPool2d(2),  # 14x14 -> 7x7
+        )
+        self.classifier = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(64 * 7 * 7, 128),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(128, 10),  # 10 output classes (digits 0-9)
+        )
+
+    def forward(self, x):
+        x = self.features(x)
+        return self.classifier(x)</code></pre>
+
+        <h3>Code Snippet - Training Loop</h3>
+        <pre><code>def train_one_epoch(model, loader, criterion, optimizer, device):
+    model.train()
+    running_loss, seen = 0.0, 0
+
+    for x, y in loader:
+        x, y = x.to(device), y.to(device)
+
+        optimizer.zero_grad(set_to_none=True)
+        logits = model(x)
+        loss = criterion(logits, y)
+        loss.backward()
+        optimizer.step()
+
+        running_loss += loss.item() * x.size(0)
+        seen += x.size(0)
+
+    return running_loss / seen
+
+# Training loop
+for epoch in range(1, EPOCHS + 1):
+    train_loss = train_one_epoch(model, train_loader, criterion, optimizer, DEVICE)
+    test_loss, test_acc = evaluate(model, test_loader, criterion, DEVICE)
+    print(f"Epoch {epoch}/{EPOCHS} | test_acc={test_acc*100:.2f}%")</code></pre>
+
+        <h3>Results</h3>
+        <p>After training for just 5 epochs, the model achieved over 98% accuracy on the test set. Students were able to test the model on their own handwritten digits to see it make predictions in real-time.</p>
+        <figure class="about-section-figure">
+          <img src="../images/PredictedNum.png" alt="MNIST CNN prediction result showing the model correctly predicting the digit 2" class="about-section-image">
+          <figcaption>The trained CNN correctly predicting a handwritten digit "2"</figcaption>
+        </figure>
+
+        <h3>What I Learned</h3>
+        <p>Teaching this lesson reinforced my own understanding of neural networks and helped me develop skills in explaining complex concepts in accessible ways. I learned how to structure a hands-on coding activity that balances theory with practice, and saw firsthand how visual results (like seeing the model correctly classify digits) make abstract concepts click for learners.</p>
+      </section>
+
+      <section class="project-section">
         <h2>Summative</h2>
         <p>Work in progress.</p>
       </section>
@@ -172,7 +242,12 @@ draw_sierpinski(my_turtle, 4, 400)</code></pre>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>ICS4U Portfolio</p>
+      <p>&copy; 2026 Qianhao Han. Built for my web development course.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../resources.html">Resources</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
   </footer>
 

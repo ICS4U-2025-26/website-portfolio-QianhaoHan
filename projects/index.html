@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <!-- Site Header: Contains logo, hamburger menu for mobile, and main navigation with dropdown -->
   <header class="site-header">
     <div class="header-content">
       <a href="../index.html" class="logo">My Portfolio</a>
@@ -33,42 +34,76 @@
     </div>
   </header>
 
+  <!-- Main Content Area -->
   <main>
+    <!-- Page Header: Title and description for the projects page -->
     <div class="page-header">
       <h1>My Projects</h1>
       <p>A collection of all the projects I've completed throughout my ICS4U course. Each unit focuses on different skills and technologies.</p>
     </div>
 
+    <!-- Projects Table: Displays all projects with name, unit, date, technologies, and links -->
     <div class="projects-table-wrapper">
       <table class="projects-table">
+        <caption>Overview of all projects completed in ICS4U, organized by unit and date</caption>
         <thead>
           <tr>
             <th>Project Name</th>
             <th>Unit</th>
             <th>Date</th>
             <th>Technologies</th>
-            <th>Github Repo</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Text Analyzer</td>
+            <td>Variables, Loops & Conditionals Review</td>
             <td>Unit 1</td>
-            <td>October 2025</td>
-            <td>Python</td>
-            <td><a href="https://github.com/ICS4U-2025-26/textanalyzer-QianhaoHan">View Project</a></td>
+            <td>September 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit1.html">View Project</a></td>
           </tr>
           <tr>
-            <td>Civilians First</td>
-            <td>Unit 2</td>
-            <td>December 2025</td>
-            <td>JavaScript, HTML, CSS </td>
-            <td><a href="https://github.com/ICS4U-2025-26/civilians-first-summative-QianhaoHan">View Project</a></td>
+            <td>Arrays and Methods Review</td>
+            <td>Unit 1</td>
+            <td>September 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit1.html">View Project</a></td>
           </tr>
+          <tr>
+            <td>JavaScript Fundamentals</td>
+            <td>Unit 2</td>
+            <td>October 2025</td>
+            <td>HTML, CSS, JavaScript</td>
+            <td><a href="unit2.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>DOM Manipulation & Events</td>
+            <td>Unit 2</td>
+            <td>November 2025</td>
+            <td>HTML, CSS, JavaScript</td>
+            <td><a href="unit2.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Sorting & Searching Algorithms</td>
+            <td>Unit 3</td>
+            <td>December 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit3.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Intro to Machine Learning</td>
+            <td>Unit 3</td>
+            <td>January 2026</td>
+            <td>Python, ML Libraries</td>
+            <td><a href="unit3.html">View Project</a></td>
+          </tr>
+
         </tbody>
       </table>
     </div>
 
+    <!-- Quick Links Section: Card grid for navigating to individual unit pages -->
     <section class="quick-links" style="padding-top: 0;">
       <h2>Browse by Unit</h2>
       <div class="cards-grid">
@@ -96,12 +131,19 @@
     </section>
   </main>
 
+  <!-- Site Footer: Copyright info and quick navigation links -->
   <footer class="site-footer">
     <div class="footer-content">
-      <p>ICS4U Portfolio</p>
+      <p>&copy; 2026 My Portfolio. Built for my web development course.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../resources.html">Resources</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
   </footer>
 
+  <!-- Theme Toggle Button: Switches between light and dark mode -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
     <span class="sun-icon">☀️</span>
     <span class="moon-icon">🌙</span>
