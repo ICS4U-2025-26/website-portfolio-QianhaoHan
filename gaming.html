@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Corner | My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="projects/index.html" class="nav-link">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="projects/unit1.html">Unit 1</a></li>
+              <li><a href="projects/unit2.html">Unit 2</a></li>
+              <li><a href="projects/unit3.html">Unit 3</a></li>
+              <li><a href="projects/unit4.html">Unit 4</a></li>
+            </ul>
+          </li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="gaming.html" class="nav-link active">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Gaming Corner</h1>
+      <p>Welcome to my gaming corner! Here you can play some fun games I created using JavaScript. These mini-games showcase interactive programming concepts.</p>
+    </div>
+
+    <div class="gaming-content">
+      <div class="game-container">
+        <h2>Dino Runner</h2>
+        <p>Press SPACE or tap to jump over the cacti! How long can you survive?</p>
+        <div id="dino-game">
+          <canvas id="dino-canvas" width="600" height="150"></canvas>
+          <div class="dino-controls">
+            <p>Score: <span class="game-score" id="dino-score">0</span> | High Score: <span id="dino-high-score">0</span></p>
+            <button class="btn btn-secondary" id="start-dino">Start Game</button>
+          </div>
+          <p id="dino-message">Press SPACE or tap to jump</p>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <h2>Click Speed Test</h2>
+        <p>Test your clicking speed! Click the button as many times as you can in 10 seconds.</p>
+        <div id="click-game">
+          <p>Clicks: <span class="game-score" id="click-count">0</span></p>
+          <p>Time: <span id="time-left">10</span> seconds</p>
+          <div class="game-buttons">
+            <button class="btn btn-primary" id="click-btn" disabled>Click Me!</button>
+            <button class="btn btn-secondary" id="start-click-game">Start Game</button>
+          </div>
+          <p id="click-result"></p>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <h2>Reaction Time Test</h2>
+        <p>Test your reflexes! Click the button as soon as it turns green.</p>
+        <div id="reaction-game">
+          <div id="reaction-box" style="width: 200px; height: 200px; background-color: #e74c3c; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; cursor: pointer; margin: 0 auto 1rem; transition: background-color 0.3s;">
+            Wait...
+          </div>
+          <div class="game-buttons">
+            <button class="btn btn-secondary" id="start-reaction">Start Test</button>
+          </div>
+          <p id="reaction-result"></p>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <h2>About These Games</h2>
+        <p>These games were created using <strong>vanilla JavaScript</strong> to demonstrate:</p>
+        <ul class="interests-list">
+          <li><strong>Event handling</strong> - Responding to user clicks and input</li>
+          <li><strong>DOM manipulation</strong> - Updating the page dynamically</li>
+          <li><strong>Timers</strong> - Using <code>setTimeout</code> and <code>setInterval</code></li>
+          <li><strong>Canvas API</strong> - Drawing graphics and animations</li>
+          <li><strong>Game loops</strong> - Using requestAnimationFrame for smooth rendering</li>
+          <li><strong>State management</strong> - Tracking scores and game progress</li>
+        </ul>
+        <p>Feel free to view the source code to see how they work!</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // ===== Click Speed Game =====
+    let clickCount = 0;
+    let clickGameActive = false;
+    let clickTimer;
+
+    const clickBtn = document.getElementById('click-btn');
+    const startClickBtn = document.getElementById('start-click-game');
+    const clickCountDisplay = document.getElementById('click-count');
+    const timeLeftDisplay = document.getElementById('time-left');
+    const clickResult = document.getElementById('click-result');
+
+    if (startClickBtn) {
+      startClickBtn.addEventListener('click', startClickGame);
+    }
+
+    if (clickBtn) {
+      clickBtn.addEventListener('click', () => {
+        if (clickGameActive) {
+          clickCount++;
+          clickCountDisplay.textContent = clickCount;
+        }
+      });
+    }
+
+    function startClickGame() {
+      clickCount = 0;
+      clickGameActive = true;
+      clickCountDisplay.textContent = '0';
+      clickResult.textContent = '';
+      clickBtn.disabled = false;
+      startClickBtn.disabled = true;
+      
+      let timeLeft = 10;
+      timeLeftDisplay.textContent = timeLeft;
+      
+      clickTimer = setInterval(() => {
+        timeLeft--;
+        timeLeftDisplay.textContent = timeLeft;
+        
+        if (timeLeft <= 0) {
+          clearInterval(clickTimer);
+          clickGameActive = false;
+          clickBtn.disabled = true;
+          startClickBtn.disabled = false;
+          
+          let message = '';
+          if (clickCount >= 80) {
+            message = 'Amazing! You have lightning-fast fingers!';
+          } else if (clickCount >= 60) {
+            message = 'Great job! Very impressive speed!';
+          } else if (clickCount >= 40) {
+            message = 'Good effort! Keep practicing!';
+          } else {
+            message = 'Nice try! See if you can beat your score!';
+          }
+          
+          clickResult.textContent = `Game Over! You clicked ${clickCount} times. ${message}`;
+          clickResult.style.color = 'var(--accent)';
+        }
+      }, 1000);
+    }
+
+    // ===== Reaction Time Game =====
+    let reactionStartTime;
+    let reactionTimeout;
+    let waitingForGreen = false;
+
+    const reactionBox = document.getElementById('reaction-box');
+    const startReactionBtn = document.getElementById('start-reaction');
+    const reactionResult = document.getElementById('reaction-result');
+
+    if (startReactionBtn) {
+      startReactionBtn.addEventListener('click', startReactionGame);
+    }
+
+    if (reactionBox) {
+      reactionBox.addEventListener('click', handleReactionClick);
+    }
+
+    function startReactionGame() {
+      reactionResult.textContent = '';
+      reactionBox.style.backgroundColor = '#e74c3c';
+      reactionBox.textContent = 'Wait for green...';
+      startReactionBtn.disabled = true;
+      waitingForGreen = false;
+      
+      // Random delay between 1-5 seconds
+      const delay = Math.random() * 4000 + 1000;
+      
+      reactionTimeout = setTimeout(() => {
+        reactionBox.style.backgroundColor = '#27ae60';
+        reactionBox.textContent = 'CLICK NOW!';
+        reactionStartTime = Date.now();
+        waitingForGreen = true;
+      }, delay);
+    }
+
+    function handleReactionClick() {
+      if (waitingForGreen) {
+        const reactionTime = Date.now() - reactionStartTime;
+        waitingForGreen = false;
+        startReactionBtn.disabled = false;
+        
+        reactionBox.style.backgroundColor = '#3498db';
+        reactionBox.textContent = `${reactionTime}ms`;
+        
+        let message = '';
+        if (reactionTime < 200) {
+          message = 'Incredible! Lightning reflexes!';
+        } else if (reactionTime < 300) {
+          message = 'Great reaction time!';
+        } else if (reactionTime < 400) {
+          message = 'Good reflexes!';
+        } else {
+          message = 'Keep practicing to improve!';
+        }
+        
+        reactionResult.textContent = `Your reaction time: ${reactionTime}ms. ${message}`;
+        reactionResult.style.color = 'var(--accent)';
+      } else if (reactionBox.style.backgroundColor === 'rgb(231, 76, 60)') {
+        // Clicked too early
+        clearTimeout(reactionTimeout);
+        reactionBox.textContent = 'Too early!';
+        reactionResult.textContent = 'You clicked before the box turned green. Try again!';
+        reactionResult.style.color = '#e74c3c';
+        startReactionBtn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

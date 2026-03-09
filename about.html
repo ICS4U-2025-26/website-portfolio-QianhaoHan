@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Qianhao Han</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="projects/index.html" class="nav-link">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="projects/unit1.html">Unit 1</a></li>
+              <li><a href="projects/unit2.html">Unit 2</a></li>
+              <li><a href="projects/unit3.html">Unit 3</a></li>
+              <li><a href="projects/unit4.html">Unit 4</a></li>
+            </ul>
+          </li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link active">About Me</a></li>
+          <li><a href="gaming.html" class="nav-link">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <div class="page-header">
+      <h1>About Me</h1>
+      <p>Get to know me a little better - my background & interests</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-grid">
+        <div class="about-images">
+          <img src="images/QianhaoHan_Headshot.jpg" alt="A photo of Qianhao Han" class="about-image">
+        </div>
+
+        
+        <div class="about-text">
+          <h2>Hello!</h2>
+          <p>I'm <strong>Qianhao Han</strong>, a student at <strong>The Bishop Strachan School</strong> in Toronto (Class of 2027). I'm passionate about AI, robotics, and using technology to make a positive impact on the world.</p>
+
+          <h2>CS & AI</h2>
+          <p>I represented <strong>Team Canada at IOAI 2024 and 2025</strong> (Silver in Practical, Bronze in Scientific) and <strong>IAIO 2026</strong>, where I won a <strong>Bronze Medal</strong></p>
+          
+          <p>Some recent highlights:</p>
+          <ul class="interests-list">
+            <li><strong>Research</strong> - Using deep learning for radiology report generation, published at IEEE BigData 2024 (Runner-Up Paper Award) and IEEE CBMS 2025</li>
+            <li><strong>HiveGuard</strong> - A honeycomb-inspired concussion helmet with EEG feedback, accepted as a demo to ACM/IEEE SEC 2025 (2nd in Student Research Competition)</li>
+            <li><strong>Tech2Gether</strong> - Co-founded a non-profit supporting financially disadvantaged robotics students, raising $15,000+ in sponsorships</li>
+            <li><strong>OneAI</strong> - Founded a global AI education initiative with branches in 20+ schools across 5 countries</li>
+          </ul>
+          
+          <figure class="about-section-figure">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ACMIEEE_SEC.JPG-EX2zLnFcEQeTtmuDStHvFEWF3QVKmp.jpeg" alt="Qianhao Han presenting the HiveGuard honeycomb-structured helmet with embedded EEG system at ACM/IEEE SEC conference" class="about-section-image">
+            <figcaption>Presenting HiveGuard at ACM/IEEE SEC 2024 in Washington D.C.</figcaption>
+          </figure>
+
+          <h2>Beyond Computing</h2>
+          <p>When I'm not coding or doing research, I love:</p>
+          <ul class="interests-list">
+            <li><strong>Traveling</strong> - Exploring new cities, cultures, and cuisines around the world!</li>
+            <li><strong>Playing the cello</strong> - I take private lessons and play in BSS Senior & Chamber Strings</li>
+            <li><strong>Visiting art galleries and museums</strong> - I co-founded the Art & Museum Club at BSS and studied Qing dynasty vase restoration at the Fitzwilliam Museum in Cambridge</li>
+            <li><strong>Going to cafes and eating</strong> - Always on the hunt for the best coffee spots and trying new foods :)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

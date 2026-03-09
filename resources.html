@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | Qianhao Han</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="projects/index.html" class="nav-link">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="projects/unit1.html">Unit 1</a></li>
+              <li><a href="projects/unit2.html">Unit 2</a></li>
+              <li><a href="projects/unit3.html">Unit 3</a></li>
+              <li><a href="projects/unit4.html">Unit 4</a></li>
+            </ul>
+          </li>
+          <li><a href="resources.html" class="nav-link active">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="gaming.html" class="nav-link">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Learning Resources</h1>
+      <p>A curated collection of helpful resources I used throughout the ICS4U course, organized by unit.</p>
+    </div>
+
+    <div class="resources-list">
+      <section class="resource-category">
+        <h2>Unit 1: Programming Fundamentals</h2>
+        <ul>
+          <li>
+            <a href="https://www.brianheinold.net/python/python_book.html" target="_blank" rel="noopener noreferrer">
+              A Practical Introduction to Python Programming - Brian Heinold
+            </a>
+            <p class="resource-desc">Comprehensive Python textbook covering fundamentals, file I/O, and more</p>
+          </li>
+          <li>
+            <a href="https://docs.python.org/3/tutorial/inputoutput.html" target="_blank" rel="noopener noreferrer">
+              Python Documentation - Input and Output
+            </a>
+            <p class="resource-desc">Official Python docs on file handling and I/O operations</p>
+          </li>
+          <li>
+            <a href="https://realpython.com/python-exceptions/" target="_blank" rel="noopener noreferrer">
+              Real Python - Python Exceptions Guide
+            </a>
+            <p class="resource-desc">In-depth guide to exception handling with try/except</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="resource-category">
+        <h2>Unit 2: Introduction to JavaScript</h2>
+        <ul>
+          <li>
+            <a href="https://www.w3schools.com/js/js_function_definition.asp" target="_blank" rel="noopener noreferrer">
+              W3Schools - JavaScript Function Definitions
+            </a>
+            <p class="resource-desc">Learn how to define and call functions in JavaScript</p>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">
+              MDN - JavaScript Array Reference
+            </a>
+            <p class="resource-desc">Complete reference for array methods and properties</p>
+          </li>
+          <li>
+            <a href="https://javascript.info/document" target="_blank" rel="noopener noreferrer">
+              JavaScript.info - Document Object Model (DOM)
+            </a>
+            <p class="resource-desc">Learn DOM manipulation for interactive web pages</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="resource-category">
+        <h2>Unit 3: Algorithms, Machine Learning, and AI</h2>
+        <ul>
+          <li>
+            <a href="https://www.geeksforgeeks.org/dsa/searching-algorithms/" target="_blank" rel="noopener noreferrer">
+              GeeksforGeeks - Searching Algorithms
+            </a>
+            <p class="resource-desc">Overview of linear search, binary search, and other searching techniques</p>
+          </li>
+          <li>
+            <a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener noreferrer">
+              Google Machine Learning Crash Course
+            </a>
+            <p class="resource-desc">Free introductory course to machine learning concepts and TensorFlow</p>
+          </li>
+          <li>
+            <a href="https://www.elementsofai.com/" target="_blank" rel="noopener noreferrer">
+              Elements of AI - Free Online Course
+            </a>
+            <p class="resource-desc">Beginner-friendly introduction to AI concepts from University of Helsinki</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="resource-category">
+        <h2>Unit 4: Object-Oriented Programming</h2>
+        <ul>
+          <li>
+            <a href="https://realpython.com/python3-object-oriented-programming/" target="_blank" rel="noopener noreferrer">
+              Real Python - Object-Oriented Programming in Python 3
+            </a>
+            <p class="resource-desc">Comprehensive guide to classes, objects, inheritance, and more</p>
+          </li>
+          <li>
+            <a href="https://docs.oracle.com/javase/tutorial/java/concepts/" target="_blank" rel="noopener noreferrer">
+              Oracle Java Tutorials - Object-Oriented Concepts
+            </a>
+            <p class="resource-desc">Official Java documentation on OOP principles</p>
+          </li>
+          <li>
+            <a href="https://www.geeksforgeeks.org/python-oops-concepts/" target="_blank" rel="noopener noreferrer">
+              GeeksforGeeks - Python OOPs Concepts
+            </a>
+            <p class="resource-desc">Classes, inheritance, polymorphism, and encapsulation in Python</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects | Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="index.html" class="nav-link active">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="unit1.html">Unit 1</a></li>
+              <li><a href="unit2.html">Unit 2</a></li>
+              <li><a href="unit3.html">Unit 3</a></li>
+              <li><a href="unit4.html">Unit 4</a></li>
+            </ul>
+          </li>
+          <li><a href="../resources.html" class="nav-link">Resources</a></li>
+          <li><a href="../about.html" class="nav-link">About Me</a></li>
+          <li><a href="../gaming.html" class="nav-link">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>My Projects</h1>
+      <p>A collection of all the projects I've completed throughout my ICS4U course. Each unit focuses on different skills and technologies.</p>
+    </div>
+
+    <div class="projects-table-wrapper">
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Unit</th>
+            <th>Date</th>
+            <th>Technologies</th>
+            <th>Github Repo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Text Analyzer</td>
+            <td>Unit 1</td>
+            <td>October 2025</td>
+            <td>Python</td>
+            <td><a href="https://github.com/ICS4U-2025-26/textanalyzer-QianhaoHan">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Civilians First</td>
+            <td>Unit 2</td>
+            <td>December 2025</td>
+            <td>JavaScript, HTML, CSS </td>
+            <td><a href="https://github.com/ICS4U-2025-26/civilians-first-summative-QianhaoHan">View Project</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <section class="quick-links" style="padding-top: 0;">
+      <h2>Browse by Unit</h2>
+      <div class="cards-grid">
+        <a href="unit1.html" class="card">
+          <div class="card-icon">01</div>
+          <h3>Unit 1: Programming Fundamentals</h3>
+          <p>Review of ICS3U: variables, loops, conditionals, arrays, and methods.</p>
+        </a>
+        <a href="unit2.html" class="card">
+          <div class="card-icon">02</div>
+          <h3>Unit 2: Intro to JavaScript</h3>
+          <p>JavaScript fundamentals, DOM manipulation, and event handling.</p>
+        </a>
+        <a href="unit3.html" class="card">
+          <div class="card-icon">03</div>
+          <h3>Unit 3: Algorithms, ML & AI</h3>
+          <p>Sorting, searching algorithms, machine learning, and artificial intelligence.</p>
+        </a>
+        <a href="unit4.html" class="card">
+          <div class="card-icon">04</div>
+          <h3>Unit 4: Object-Oriented Programming</h3>
+          <p>Classes, objects, inheritance, polymorphism, and design patterns.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Build Notes
+
+AI Use:
+V0 - for setting up an outline
+ChatGPT & DeepSeek - for debugging
+
+Resources: 
+- MDN web docs
+(especially this page for my demo in the unit 3 page: 
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
+- Javascript.info
