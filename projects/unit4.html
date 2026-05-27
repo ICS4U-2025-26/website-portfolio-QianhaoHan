@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 4: Object-Oriented Programming | My Projects</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .embedded-game {
+      width: 100%;
+      min-height: 720px;
+      border: 1px solid var(--border-color, #d0d7de);
+      border-radius: 16px;
+      background: #2b2b2b;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+    .code-block {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 1rem;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      white-space: pre;
+    }
+    .requirements-list li { margin-bottom: 0.45rem; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -38,13 +59,535 @@
   <main>
     <div class="page-header">
       <h1>Unit 4: Object-Oriented Programming</h1>
-      <p>This unit covers object-oriented programming concepts including classes, objects, inheritance, encapsulation, and polymorphism.</p>
+      <p>This unit focused on using classes and objects to organize larger programs. My summative project was a Character Battle Arena where characters have stats, actions, and battle behaviours.</p>
     </div>
 
     <div class="unit-content">
       <section class="project-section">
-        <h2>Summative</h2>
-        <p>Work in progress.</p>
+        <h2>OOP Principles</h2>
+        <p>
+          In my Character Battle Arena, I used <strong>encapsulation</strong> by creating a <code>Character</code> class that stores each character's name, attack, defense, health, and speed. Instead of directly changing these values throughout the program, I used methods such as <code>getHealth()</code>, <code>takeDamage()</code>, <code>heal()</code>, and <code>attackTarget()</code>. This keeps the character data and behaviours together, making the program easier to understand, test, and update.
+        </p>
+        <p>
+          The project also shows modular design because the class logic is separated from the main game logic. The <code>character.js</code> file defines what a character is and what it can do, while <code>main.js</code> handles user commands, loading rosters, drawing the canvas, and running the battle. This separation makes the code more maintainable because changes to character behaviour do not require rewriting the entire game.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Character Battle Arena Embedded Demo</h2>
+        <p>
+          Instructions: type <strong>1</strong> and press Enter to load characters, type <strong>3</strong> to view the rosters, then type <strong>5</strong> to start the battle. Use the Attack and Heal buttons to play.
+        </p>
+        <iframe class="embedded-game" title="Character Battle Arena" srcdoc="&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&lt;title&gt;Character Battle Arena&lt;/title&gt;&lt;style&gt;body{background:#2b2b2b;color:white;font-family:&#x27;Courier New&#x27;,Courier,monospace;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:16px;box-sizing:border-box}#main-container{display:flex;flex-direction:row;gap:20px;background:#3b3b3b;padding:20px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.5)}#left-column{display:flex;flex-direction:column;gap:15px}#gameCanvas{background:#e0f7fa;border:4px solid #000;border-radius:5px}#controls-area{background:#4b4b4b;border:2px solid #222;border-radius:5px;padding:15px;height:100px;display:flex;justify-content:center;align-items:center}#moves-container{display:flex;flex-wrap:wrap;gap:10px;width:100%;height:100%}#moves-container button{flex:1 1 45%;background:#ff5252;color:white;font-family:inherit;font-weight:bold;font-size:14px;border:2px solid #b71c1c;border-radius:5px;cursor:pointer}#moves-container button:hover{background:#ff1744}#right-column{display:flex;flex-direction:column;width:350px}#battle-log{flex-grow:1;background:#111;color:#4caf50;padding:15px;border:2px solid #000;border-bottom:none;overflow-y:auto;height:400px;box-sizing:border-box}#battle-log div{margin-bottom:5px}#command-input{width:100%;padding:15px;background:#222;color:white;border:2px solid #000;font-family:inherit;font-size:16px;box-sizing:border-box;outline:none}#command-input:focus{border-color:#4caf50}@media(max-width:900px){#main-container{flex-direction:column}#right-column{width:100%}#gameCanvas{width:100%;height:auto}}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div id=&quot;main-container&quot;&gt;&lt;div id=&quot;left-column&quot;&gt;&lt;canvas id=&quot;gameCanvas&quot; width=&quot;500&quot; height=&quot;350&quot;&gt;&lt;/canvas&gt;&lt;div id=&quot;controls-area&quot;&gt;&lt;div id=&quot;moves-container&quot;&gt;Action panel inactive. Load characters and start battle.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=&quot;right-column&quot;&gt;&lt;div id=&quot;battle-log&quot;&gt;&lt;div&gt;&amp;gt; SYSTEM INITIATED&lt;/div&gt;&lt;div&gt;&amp;gt; MAIN MENU&lt;/div&gt;&lt;div&gt;&amp;gt; 1. Load Characters&lt;/div&gt;&lt;div&gt;&amp;gt; 2. Create Character&lt;/div&gt;&lt;div&gt;&amp;gt; 3. View Characters&lt;/div&gt;&lt;div&gt;&amp;gt; 4. Edit Character&lt;/div&gt;&lt;div&gt;&amp;gt; 5. Battle!&lt;/div&gt;&lt;/div&gt;&lt;input type=&quot;text&quot; id=&quot;command-input&quot; placeholder=&quot;Enter command number...&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script&gt;// character.js
+// Character class for the Character Battle Arena summative.
+// This file demonstrates encapsulation because each Character object stores
+// its own name, attack, defense, health, speed, and battle behaviours.
+
+class Character {
+  constructor(name, attack, defense, health, speed) {
+    this.name = name;
+    this.attack = Number(attack);
+    this.defense = Number(defense);
+    this.health = Number(health); // TODO #4 fixed: getHealth() returns this variable.
+    this.maxHealth = Number(health);
+    this.speed = Number(speed);
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getHealth() {
+    return this.health;
+  }
+
+  getAttack() {
+    return this.attack;
+  }
+
+  getDefense() {
+    return this.defense;
+  }
+
+  getSpeed() {
+    return this.speed;
+  }
+
+  isAlive() {
+    return this.getHealth() &gt; 0; // TODO #12 fixed: getHealth() is called with ().
+  }
+
+  takeDamage(amount) {
+    this.health = Math.max(0, this.health - amount);
+  }
+
+  attackTarget(target) {
+    const baseDamage = this.getAttack() - Math.floor(target.getDefense() / 2);
+    const damage = Math.max(5, baseDamage);
+    target.takeDamage(damage);
+    return damage;
+  }
+
+  heal() {
+    const healAmount = 20;
+    this.health = Math.min(this.maxHealth, this.health + healAmount);
+    return healAmount;
+  }
+}
+
+// main.js
+// Main game logic for Character Battle Arena.
+// This version corrects the teacher feedback from TODO #1, #4, #7, #11, #13, and #14.
+
+const homeRosterText = `Pikachu 55 40 35 90
+Charizard 84 78 78 100
+Bulbasaur 49 49 45 45
+Squirtle 48 65 44 43
+Gengar 65 60 60 110
+Mewtwo 110 90 106 130`;
+
+const enemyRosterText = `Snorlax 110 65 160 30
+Dragonite 134 95 91 80
+Lapras 85 80 130 60
+Machamp 130 80 90 55
+Alakazam 50 45 55 120
+Gyarados 125 79 95 81`;
+
+let homeCharacters = [];
+let enemyCharacters = [];
+let hChar = null;
+let eChar = null;
+let battleStarted = false;
+
+const logBox = document.getElementById(&quot;battle-log&quot;);
+const commandInput = document.getElementById(&quot;command-input&quot;);
+const movesContainer = document.getElementById(&quot;moves-container&quot;);
+const canvas = document.getElementById(&quot;gameCanvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+function log(message) {
+  const line = document.createElement(&quot;div&quot;);
+  line.textContent = &quot;&gt; &quot; + message;
+  logBox.appendChild(line);
+  logBox.scrollTop = logBox.scrollHeight;
+}
+
+function parseRosterLine(line) {
+  const data = line.trim().split(/\s+/);
+  const name = data[0];
+
+  // TODO #11 fixed: string data is parsed into numeric data before creating objects.
+  const attack = parseInt(data[1]);
+  const defense = parseInt(data[2]);
+  const health = parseInt(data[3]);
+  const speed = parseInt(data[4]);
+
+  return new Character(name, attack, defense, health, speed);
+}
+
+function loadCharacters() {
+  homeCharacters = homeRosterText.trim().split(&quot;\n&quot;).map(line =&gt; {
+    // TODO #1 fixed: character object is declared with let.
+    let character = parseRosterLine(line);
+    return character;
+  });
+
+  enemyCharacters = enemyRosterText.trim().split(&quot;\n&quot;).map(line =&gt; {
+    // TODO #4 and #7 fixed: character object is declared with let.
+    let character = parseRosterLine(line);
+    return character;
+  });
+
+  hChar = homeCharacters[0];
+  eChar = enemyCharacters[0];
+  battleStarted = false;
+  log(&quot;Characters loaded successfully.&quot;);
+  log(`Home character selected: ${hChar.getName()}`);
+  log(`Enemy character selected: ${eChar.getName()}`);
+  drawBattle();
+}
+
+function viewCharacters() {
+  if (homeCharacters.length === 0 || enemyCharacters.length === 0) {
+    log(&quot;Load characters first.&quot;);
+    return;
+  }
+
+  log(&quot;HOME ROSTER:&quot;);
+  homeCharacters.forEach((character, index) =&gt; {
+    log(`${index + 1}. ${character.getName()} | HP ${character.getHealth()} | ATK ${character.getAttack()} | DEF ${character.getDefense()} | SPD ${character.getSpeed()}`);
+  });
+
+  log(&quot;ENEMY ROSTER:&quot;);
+  enemyCharacters.forEach((character, index) =&gt; {
+    log(`${index + 1}. ${character.getName()} | HP ${character.getHealth()} | ATK ${character.getAttack()} | DEF ${character.getDefense()} | SPD ${character.getSpeed()}`);
+  });
+}
+
+function startBattle() {
+  if (!hChar || !eChar) {
+    log(&quot;Load characters before starting the battle.&quot;);
+    return;
+  }
+
+  battleStarted = true;
+  movesContainer.innerHTML = &quot;&quot;;
+
+  const attackButton = document.createElement(&quot;button&quot;);
+  attackButton.textContent = &quot;Attack&quot;;
+  attackButton.addEventListener(&quot;click&quot;, playerAttack);
+
+  const healButton = document.createElement(&quot;button&quot;);
+  healButton.textContent = &quot;Heal&quot;;
+  healButton.addEventListener(&quot;click&quot;, playerHeal);
+
+  movesContainer.appendChild(attackButton);
+  movesContainer.appendChild(healButton);
+
+  log(&quot;Battle started!&quot;);
+  drawBattle();
+}
+
+function playerAttack() {
+  if (!battleStarted) return;
+
+  // TODO #13 and #14 fixed: use eChar consistently instead of characterEnemy.
+  const damage = hChar.attackTarget(eChar);
+  log(`${hChar.getName()} attacked ${eChar.getName()} for ${damage} damage.`);
+
+  if (!eChar.isAlive()) {
+    log(`${eChar.getName()} fainted. You win!`);
+    battleStarted = false;
+    drawBattle();
+    return;
+  }
+
+  enemyTurn();
+  drawBattle();
+}
+
+function playerHeal() {
+  if (!battleStarted) return;
+  const healAmount = hChar.heal();
+  log(`${hChar.getName()} healed for ${healAmount} HP.`);
+  enemyTurn();
+  drawBattle();
+}
+
+function enemyTurn() {
+  if (!eChar.isAlive()) return;
+
+  const damage = eChar.attackTarget(hChar);
+  log(`${eChar.getName()} attacked ${hChar.getName()} for ${damage} damage.`);
+
+  if (!hChar.isAlive()) {
+    log(`${hChar.getName()} fainted. You lost the battle.`);
+    battleStarted = false;
+  }
+}
+
+function drawCharacter(character, x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, 90, 90);
+  ctx.fillStyle = &quot;#111&quot;;
+  ctx.font = &quot;16px Courier New&quot;;
+  ctx.fillText(character.getName(), x - 5, y - 15);
+  ctx.fillText(`HP: ${character.getHealth()}`, x, y + 115);
+}
+
+function drawBattle() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = &quot;#e0f7fa&quot;;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  if (hChar) drawCharacter(hChar, 80, 150, &quot;#4caf50&quot;);
+  if (eChar) drawCharacter(eChar, 330, 60, &quot;#ff5252&quot;);
+}
+
+commandInput.addEventListener(&quot;keydown&quot;, event =&gt; {
+  if (event.key !== &quot;Enter&quot;) return;
+
+  const command = commandInput.value.trim();
+  commandInput.value = &quot;&quot;;
+
+  if (command === &quot;1&quot;) loadCharacters();
+  else if (command === &quot;2&quot;) log(&quot;Create Character feature is not active in this embedded demo.&quot;);
+  else if (command === &quot;3&quot;) viewCharacters();
+  else if (command === &quot;4&quot;) log(&quot;Edit Character feature is not active in this embedded demo.&quot;);
+  else if (command === &quot;5&quot;) startBattle();
+  else log(&quot;Invalid command. Use 1, 2, 3, 4, or 5.&quot;);
+});
+
+drawBattle();
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+      </section>
+
+      <section class="project-section">
+        <h2>Corrected Code Notes</h2>
+        <ul class="requirements-list">
+          <li><strong>character.js TODO #4:</strong> <code>getHealth()</code> now returns <code>this.health</code>, which is the health variable set in the constructor.</li>
+          <li><strong>character.js TODO #12:</strong> all calls to <code>getHealth()</code> now include parentheses.</li>
+          <li><strong>main.js TODO #1, #4, and #7:</strong> character objects are declared using <code>let</code>.</li>
+          <li><strong>main.js TODO #11:</strong> roster string data is converted to numbers with <code>parseInt()</code>.</li>
+          <li><strong>main.js TODO #13 and #14:</strong> enemy character references consistently use <code>eChar</code>.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Copyable Code: character.js</h2>
+        <pre class="code-block"><code>// character.js
+// Character class for the Character Battle Arena summative.
+// This file demonstrates encapsulation because each Character object stores
+// its own name, attack, defense, health, speed, and battle behaviours.
+
+class Character {
+  constructor(name, attack, defense, health, speed) {
+    this.name = name;
+    this.attack = Number(attack);
+    this.defense = Number(defense);
+    this.health = Number(health); // TODO #4 fixed: getHealth() returns this variable.
+    this.maxHealth = Number(health);
+    this.speed = Number(speed);
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getHealth() {
+    return this.health;
+  }
+
+  getAttack() {
+    return this.attack;
+  }
+
+  getDefense() {
+    return this.defense;
+  }
+
+  getSpeed() {
+    return this.speed;
+  }
+
+  isAlive() {
+    return this.getHealth() &gt; 0; // TODO #12 fixed: getHealth() is called with ().
+  }
+
+  takeDamage(amount) {
+    this.health = Math.max(0, this.health - amount);
+  }
+
+  attackTarget(target) {
+    const baseDamage = this.getAttack() - Math.floor(target.getDefense() / 2);
+    const damage = Math.max(5, baseDamage);
+    target.takeDamage(damage);
+    return damage;
+  }
+
+  heal() {
+    const healAmount = 20;
+    this.health = Math.min(this.maxHealth, this.health + healAmount);
+    return healAmount;
+  }
+}
+</code></pre>
+      </section>
+
+      <section class="project-section">
+        <h2>Copyable Code: main.js</h2>
+        <pre class="code-block"><code>// main.js
+// Main game logic for Character Battle Arena.
+// This version corrects the teacher feedback from TODO #1, #4, #7, #11, #13, and #14.
+
+const homeRosterText = `Pikachu 55 40 35 90
+Charizard 84 78 78 100
+Bulbasaur 49 49 45 45
+Squirtle 48 65 44 43
+Gengar 65 60 60 110
+Mewtwo 110 90 106 130`;
+
+const enemyRosterText = `Snorlax 110 65 160 30
+Dragonite 134 95 91 80
+Lapras 85 80 130 60
+Machamp 130 80 90 55
+Alakazam 50 45 55 120
+Gyarados 125 79 95 81`;
+
+let homeCharacters = [];
+let enemyCharacters = [];
+let hChar = null;
+let eChar = null;
+let battleStarted = false;
+
+const logBox = document.getElementById(&quot;battle-log&quot;);
+const commandInput = document.getElementById(&quot;command-input&quot;);
+const movesContainer = document.getElementById(&quot;moves-container&quot;);
+const canvas = document.getElementById(&quot;gameCanvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+function log(message) {
+  const line = document.createElement(&quot;div&quot;);
+  line.textContent = &quot;&gt; &quot; + message;
+  logBox.appendChild(line);
+  logBox.scrollTop = logBox.scrollHeight;
+}
+
+function parseRosterLine(line) {
+  const data = line.trim().split(/\s+/);
+  const name = data[0];
+
+  // TODO #11 fixed: string data is parsed into numeric data before creating objects.
+  const attack = parseInt(data[1]);
+  const defense = parseInt(data[2]);
+  const health = parseInt(data[3]);
+  const speed = parseInt(data[4]);
+
+  return new Character(name, attack, defense, health, speed);
+}
+
+function loadCharacters() {
+  homeCharacters = homeRosterText.trim().split(&quot;\n&quot;).map(line =&gt; {
+    // TODO #1 fixed: character object is declared with let.
+    let character = parseRosterLine(line);
+    return character;
+  });
+
+  enemyCharacters = enemyRosterText.trim().split(&quot;\n&quot;).map(line =&gt; {
+    // TODO #4 and #7 fixed: character object is declared with let.
+    let character = parseRosterLine(line);
+    return character;
+  });
+
+  hChar = homeCharacters[0];
+  eChar = enemyCharacters[0];
+  battleStarted = false;
+  log(&quot;Characters loaded successfully.&quot;);
+  log(`Home character selected: ${hChar.getName()}`);
+  log(`Enemy character selected: ${eChar.getName()}`);
+  drawBattle();
+}
+
+function viewCharacters() {
+  if (homeCharacters.length === 0 || enemyCharacters.length === 0) {
+    log(&quot;Load characters first.&quot;);
+    return;
+  }
+
+  log(&quot;HOME ROSTER:&quot;);
+  homeCharacters.forEach((character, index) =&gt; {
+    log(`${index + 1}. ${character.getName()} | HP ${character.getHealth()} | ATK ${character.getAttack()} | DEF ${character.getDefense()} | SPD ${character.getSpeed()}`);
+  });
+
+  log(&quot;ENEMY ROSTER:&quot;);
+  enemyCharacters.forEach((character, index) =&gt; {
+    log(`${index + 1}. ${character.getName()} | HP ${character.getHealth()} | ATK ${character.getAttack()} | DEF ${character.getDefense()} | SPD ${character.getSpeed()}`);
+  });
+}
+
+function startBattle() {
+  if (!hChar || !eChar) {
+    log(&quot;Load characters before starting the battle.&quot;);
+    return;
+  }
+
+  battleStarted = true;
+  movesContainer.innerHTML = &quot;&quot;;
+
+  const attackButton = document.createElement(&quot;button&quot;);
+  attackButton.textContent = &quot;Attack&quot;;
+  attackButton.addEventListener(&quot;click&quot;, playerAttack);
+
+  const healButton = document.createElement(&quot;button&quot;);
+  healButton.textContent = &quot;Heal&quot;;
+  healButton.addEventListener(&quot;click&quot;, playerHeal);
+
+  movesContainer.appendChild(attackButton);
+  movesContainer.appendChild(healButton);
+
+  log(&quot;Battle started!&quot;);
+  drawBattle();
+}
+
+function playerAttack() {
+  if (!battleStarted) return;
+
+  // TODO #13 and #14 fixed: use eChar consistently instead of characterEnemy.
+  const damage = hChar.attackTarget(eChar);
+  log(`${hChar.getName()} attacked ${eChar.getName()} for ${damage} damage.`);
+
+  if (!eChar.isAlive()) {
+    log(`${eChar.getName()} fainted. You win!`);
+    battleStarted = false;
+    drawBattle();
+    return;
+  }
+
+  enemyTurn();
+  drawBattle();
+}
+
+function playerHeal() {
+  if (!battleStarted) return;
+  const healAmount = hChar.heal();
+  log(`${hChar.getName()} healed for ${healAmount} HP.`);
+  enemyTurn();
+  drawBattle();
+}
+
+function enemyTurn() {
+  if (!eChar.isAlive()) return;
+
+  const damage = eChar.attackTarget(hChar);
+  log(`${eChar.getName()} attacked ${hChar.getName()} for ${damage} damage.`);
+
+  if (!hChar.isAlive()) {
+    log(`${hChar.getName()} fainted. You lost the battle.`);
+    battleStarted = false;
+  }
+}
+
+function drawCharacter(character, x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, 90, 90);
+  ctx.fillStyle = &quot;#111&quot;;
+  ctx.font = &quot;16px Courier New&quot;;
+  ctx.fillText(character.getName(), x - 5, y - 15);
+  ctx.fillText(`HP: ${character.getHealth()}`, x, y + 115);
+}
+
+function drawBattle() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = &quot;#e0f7fa&quot;;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  if (hChar) drawCharacter(hChar, 80, 150, &quot;#4caf50&quot;);
+  if (eChar) drawCharacter(eChar, 330, 60, &quot;#ff5252&quot;);
+}
+
+commandInput.addEventListener(&quot;keydown&quot;, event =&gt; {
+  if (event.key !== &quot;Enter&quot;) return;
+
+  const command = commandInput.value.trim();
+  commandInput.value = &quot;&quot;;
+
+  if (command === &quot;1&quot;) loadCharacters();
+  else if (command === &quot;2&quot;) log(&quot;Create Character feature is not active in this embedded demo.&quot;);
+  else if (command === &quot;3&quot;) viewCharacters();
+  else if (command === &quot;4&quot;) log(&quot;Edit Character feature is not active in this embedded demo.&quot;);
+  else if (command === &quot;5&quot;) startBattle();
+  else log(&quot;Invalid command. Use 1, 2, 3, 4, or 5.&quot;);
+});
+
+drawBattle();
+</code></pre>
+      </section>
+
+      <section class="project-section">
+        <h2>Summary: Why OOP Helps Larger Projects</h2>
+        <p>
+          Modular design with OOP is more efficient for large-scale projects than procedural programming because it separates the program into smaller, reusable parts. In this project, the <code>Character</code> class acts like a blueprint for every character, so I do not need to rewrite the same health, attack, and damage logic for each new character. This makes the code easier to expand because I can add more characters or new abilities while reusing the same structure. It also makes debugging easier because if there is an issue with character health or damage, I know to check the class methods instead of searching through one long procedural file.
+        </p>
       </section>
 
       <div class="cards-grid" style="margin-top: 2rem;">
@@ -52,6 +595,11 @@
           <div class="card-icon">03</div>
           <h3>Previous: Unit 3</h3>
           <p>Review Algorithms, ML & AI projects.</p>
+        </a>
+        <a href="unit5.html" class="card">
+          <div class="card-icon">05</div>
+          <h3>Next: Unit 5</h3>
+          <p>Explore Topics in Computer Science.</p>
         </a>
         <a href="index.html" class="card">
           <div class="card-icon">&larr;</div>
