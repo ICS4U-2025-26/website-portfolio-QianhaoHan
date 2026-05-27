@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1: Programming Fundamentals | My Projects</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="index.html" class="nav-link active">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="unit1.html">Unit 1</a></li>
+              <li><a href="unit2.html">Unit 2</a></li>
+              <li><a href="unit3.html">Unit 3</a></li>
+              <li><a href="unit4.html">Unit 4</a></li>
+              <li><a href="unit5.html">Unit 5</a></li>
+              <li><a href="unit6.html">Unit 6</a></li>
+            </ul>
+          </li>
+          <li><a href="../resources.html" class="nav-link">Resources</a></li>
+          <li><a href="../about.html" class="nav-link">About Me</a></li>
+          <li><a href="../gaming.html" class="nav-link">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Unit 1: Programming Fundamentals</h1>
+      <p>This unit was a review of ICS3U concepts including variables, data types, loops, conditionals, arrays, and methods in Java and Python.</p>
+      <a href="https://github.com/ICS4U-QH/Unit1-ProgrammingFundamentals/branches" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">View GitHub Repository</a>
+    </div>
+
+    <div class="unit-content">
+      <section class="project-section">
+        <h2>Project: Word Analysis - Functions & File Processing</h2>
+        
+        <h3>Task Description</h3>
+        <p>Build a menu-driven Python application to analyze a text file containing over 300,000 words. The program implements several string-processing functions including palindrome detection, anagram finding, and word filtering by length, all using helper functions and file I/O.</p>
+        
+        <h3>My Approach</h3>
+        <p>I wrote modular helper functions (<code>is_palindrome</code>, <code>is_anagram</code>, <code>filter_by_length</code>) and composed them into higher-level functions (<code>find_palindromes</code>, <code>find_anagrams</code>). The main program uses a <strong>while loop</strong> with input validation to drive a menu interface. Words are loaded from <code>words.txt</code> using file I/O with error handling, and the user can prune the list, search for palindromes, or find anagrams interactively.</p>
+        
+        <h3>Code Snippet</h3>
+        <pre><code>"""
+Author: Qianhao Han
+Date: Oct 9
+Sources: A Practical Introduction to Python Programming - Online Textbook
+"""
+
+# Task functions
+
+# 1. Create the function:
+def is_palindrome(s):
+  """
+  Returns a boolean value corresponding to whether the String s
+  is a palindrome or not.
+  """
+  s = s.lower()
+  return s[: :-1] == s
+
+# 2. Create the function:
+def is_anagram(original, s):
+  """
+  Returns a boolean value corresponding to whether the String s
+  is an anagram of original or not.
+  """
+  if (original.lower() == s.lower()):
+    return False
+  else:
+    return sorted(original.lower()) == sorted(s.lower())
+
+# 3. Create the function:
+def find_palindromes(word_list):
+  """
+  Finds all palindromes in a list of strings and displays them.
+  """
+  cnt = 0
+  for word in word_list:
+    if is_palindrome(word):
+      print(word)
+      cnt += 1
+  print(f"There are {cnt} palindrones in the list.")
+  return
+
+# 4. Create the function:
+def find_anagrams(word_list, target):
+  """
+  Finds all anagrams in a list of strings and displays them.
+  """
+  cnt = 0
+  for word in word_list:
+    if is_anagram(target, word):
+      print(word)
+      cnt += 1
+  print(f"There are {cnt} anagrams for {target} in the list.")
+  return
+
+# 5. Create the function:
+def filter_by_length(word_list, length):
+  """
+  Returns a new list of strings filtered by the provided length.
+  """
+  new_word_list = []
+  for word in word_list:
+    if len(word) == length:
+      new_word_list.append(word)
+  return new_word_list
+
+# 6. Menu-driven application
+def load_words(file_path):
+  """Loads words from a text file into a list."""
+  try:
+    with open(file_path, 'r') as file:
+      words = [line.strip() for line in file]
+    print(f"\nCurrently have {len(words)} words in memory.\n")
+    return words
+  except FileNotFoundError:
+    print(f"Error: The file at {file_path} was not found.")
+    return []
+
+def print_menu():
+  print("Word Analysis\n")
+  print("1 - Load/reload words from file")
+  print("2 - Update word list by word length")
+  print("3 - Find palindromes")
+  print("4 - Find anagrams")
+  print("5 - Quit")
+
+def main():
+  word_list = []
+  while True:
+    print_menu()
+    choice = input("Choose an action: ").strip()
+    if choice == "1":
+      word_list = load_words("words.txt")
+    elif choice == "2":
+      if not word_list:
+        print('List is empty. Choose 1 to load it.\n')
+        continue
+      length = int(input("Length: ").strip())
+      word_list = filter_by_length(word_list, length)
+    elif choice == "3":
+      if not word_list:
+        print('List is empty. Choose 1 to load it.\n')
+        continue
+      find_palindromes(word_list)
+    elif choice == "4":
+      if not word_list:
+        print('List is empty. Choose 1 to load it.\n')
+        continue
+      target = input("Type a word to find its anagrams: ").strip()
+      find_anagrams(word_list, target)
+    elif choice == "5":
+      print("Bye!")
+      break
+    else:
+      print('Please choose a number between 1-5.\n')
+
+if __name__ == "__main__":
+  main()</code></pre>
+
+        <h3>What I Learned</h3>
+        <p>This project reinforced the power of <em>modular design</em> -- writing small, focused helper functions like <code>is_palindrome</code> and <code>is_anagram</code> made the higher-level logic much cleaner. I also practiced <strong>file I/O</strong> with error handling using try/except, <strong>list comprehensions</strong> for concise data loading, and building an interactive <strong>menu-driven interface</strong> with input validation. Working with a dataset of 370,000+ words highlighted the importance of choosing efficient algorithms for string comparison.</p>
+      </section>
+
+      <section class="project-section">
+        <h2>Lesson: File I/O and Error Handling</h2>
+        
+        <h3>Learning Goals</h3>
+        <p>In this lesson, we learned how to read and write to files using Python, and how to catch errors using exception handling with <code>try/except</code> blocks. These skills were essential for the Word Analysis project above.</p>
+        
+        <h3>Key Concepts</h3>
+        <ul class="interests-list">
+          <li><strong>Reading from files</strong> - Using <code>open()</code> and the <code>with</code> statement to safely read file contents</li>
+          <li><strong>Writing to files</strong> - Using <code>'w'</code> mode to write and <code>'a'</code> mode to append</li>
+          <li><strong>File paths</strong> - Understanding relative and absolute paths for locating files</li>
+          <li><strong>Exception handling</strong> - Using <code>try/except</code> blocks to gracefully handle errors like <code>FileNotFoundError</code> and <code>ZeroDivisionError</code></li>
+          <li><strong>Storing data with JSON</strong> - Using <code>json.dump()</code> and <code>json.load()</code> to persist data between program runs</li>
+        </ul>
+
+        <h3>Reference Materials</h3>
+        <p>We used these Python cheat sheets as reference materials for file handling and exception handling:</p>
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          <figure style="margin: 0;">
+            <img src="../images/FileHandlingCheatSheet1.jpg" alt="Python cheat sheet covering file reading, writing, file paths, and try-except blocks" style="width: 100%; max-width: 700px; border-radius: var(--radius-md); box-shadow: var(--card-shadow);">
+            <figcaption style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">Cheat sheet page 1: Reading/writing files and basic exception handling</figcaption>
+          </figure>
+          <figure style="margin: 0;">
+            <img src="../images/FileHandlingCheatSheet2.jpg" alt="Python cheat sheet covering else blocks, failing silently, and storing data with JSON" style="width: 100%; max-width: 700px; border-radius: var(--radius-md); box-shadow: var(--card-shadow);">
+            <figcaption style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">Cheat sheet page 2: Advanced exception handling and JSON data storage</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="cards-grid" style="margin-top: 2rem;">
+        <a href="index.html" class="card">
+          <div class="card-icon">&larr;</div>
+          <h3>All Projects</h3>
+          <p>Return to the projects overview.</p>
+        </a>
+        <a href="unit2.html" class="card">
+          <div class="card-icon">02</div>
+          <h3>Next: Unit 2</h3>
+          <p>Continue to Introduction to JavaScript projects.</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="../script.js"></script>
+</body>
+</html>

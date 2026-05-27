@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Intermediate Course | MediaWise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .lesson-content {
+      margin-top: 1rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .lesson-content h4 {
+      color: white;
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .lesson-content p {
+      margin-bottom: 1rem;
+    }
+
+    .lesson-content ul,
+    .lesson-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .lesson-content li {
+      border-bottom: none;
+      padding: 0.35rem 0;
+      list-style: disc;
+    }
+
+    .lesson-content ol li {
+      list-style: decimal;
+    }
+
+    .lesson-box,
+    .example-box,
+    .activity-box,
+    .quick-check-box {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lesson-box strong,
+    .example-box strong,
+    .activity-box strong,
+    .quick-check-box strong {
+      color: #f8fafc;
+    }
+
+    .quiz-option {
+      display: block;
+      margin: 0.8rem 0;
+      color: #e2e8f0;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .quiz-result {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-btn">← Back</a>
+
+  <section class="course-header">
+
+    <div class="course-intro">
+      <div class="tag">Intermediate Result</div>
+
+      <h1>
+        Intermediate <span>Media & AI Literacy</span>
+      </h1>
+
+      <p>
+        Explore advanced source evaluation, algorithms, AI-generated media,
+        bias, and real-world misinformation through interactive lessons.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#modules" class="primary-btn">Start Learning</a>
+        <a href="beginner.html" class="secondary-btn">Beginner Track</a>
+      </div>
+    </div>
+
+    <div class="info-cards">
+
+      <div class="info-card">
+        <h3>Course Goal</h3>
+        <p>
+          Learn how algorithms, AI systems, and media framing influence
+          opinions, information, and online behaviour.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Modules</h3>
+        <p>
+          5 advanced modules covering algorithms, deepfakes,
+          media bias, source evaluation, and case studies.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Final Quiz</h3>
+        <p>
+          Complete the intermediate assessment to test your advanced
+          media literacy and AI analysis skills.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="modules" class="courses-section">
+    <div class="section-title">
+      <h2>Intermediate Course Modules</h2>
+      <p>Click each module to open detailed lessons, examples, activities, and quick checks.</p>
+    </div>
+
+    <div class="course-grid">
+
+      <div class="path-card">
+        <div class="tag">Module 1</div>
+        <h3>Advanced Source Evaluation</h3>
+        <p>Analyze bias, tone, framing, reliability, influencers, podcasts, and how outlets cover the same story.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: Bias, Tone, and Framing</h4>
+              <p>
+                Advanced media literacy is not only about spotting fake information. Many misleading
+                articles, posts, or videos contain facts. The problem is how those facts are selected,
+                arranged, emphasized, or explained.
+              </p>
+              <p>
+                Framing is the angle or perspective used to present information. One headline might
+                describe protesters as demanding justice, while another describes them as an angry mob.
+                Both could describe the same event but create very different impressions.
+              </p>
+
+              <h4>Look For</h4>
+              <ul>
+                <li>Loaded or emotional words</li>
+                <li>Facts that are included or left out</li>
+                <li>Images that make one side look better or worse</li>
+                <li>Headlines that push a strong reaction</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Verifying Digital Content</h4>
+              <p>
+                Strong claims require strong evidence. A viral post, personal story, or dramatic example
+                may feel convincing, but that does not mean it supports a broad conclusion.
+              </p>
+
+              <h4>Stronger Evidence Includes</h4>
+              <ul>
+                <li>Original documents</li>
+                <li>Large studies</li>
+                <li>Representative surveys</li>
+                <li>Transparent datasets</li>
+                <li>Peer-reviewed research</li>
+                <li>Multiple independent sources</li>
+                <li>Full video or transcript evidence</li>
+              </ul>
+
+              <p>
+                Ask whether the evidence actually supports the claim, whether the sample is large enough,
+                and whether another explanation could exist.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Evaluating Influencers, Podcasts, and Independent Media</h4>
+              <p>
+                Influencers and podcasts can explain issues clearly, but they may also have incentives:
+                attention, sponsorships, political goals, personal branding, or product sales.
+              </p>
+              <p>
+                Check whether they cite sources, correct mistakes, interview qualified people, distinguish
+                fact from opinion, and show enough context.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Comparing Coverage Across Outlets</h4>
+              <p>
+                One of the best ways to understand framing is to compare how different outlets report
+                the same story. Look at what each source emphasizes, what it minimizes, who it quotes,
+                and what evidence it includes.
+              </p>
+
+              <h4>Questions to Ask</h4>
+              <ul>
+                <li>What details does each source emphasize?</li>
+                <li>What details are missing?</li>
+                <li>Are different experts or witnesses quoted?</li>
+                <li>Does the headline match the evidence?</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Choose two articles about the same event. Compare their headlines, quoted sources,
+                emotional language, missing perspectives, and evidence.
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>An article can be factually accurate but still misleading if it:</p>
+              <p><strong>Answer:</strong> Selects only facts that support one interpretation.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 2</div>
+        <h3>Algorithms and Influence</h3>
+        <p>Understand how algorithms, echo chambers, virality, targeted ads, and platforms shape opinions.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: How Algorithms Decide What You See</h4>
+              <p>
+                Algorithms are systems that decide what content appears in your feed, search results,
+                recommendations, and ads. They often prioritize content that keeps users watching,
+                clicking, liking, commenting, or sharing.
+              </p>
+              <p>
+                This means the content you see is not random. It is shaped by your past behavior, your
+                interests, your location, platform goals, and what other users engage with.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Echo Chambers and Filter Bubbles</h4>
+              <p>
+                A filter bubble happens when platforms mostly show content similar to what you already
+                like. An echo chamber happens when you mostly hear opinions that reinforce your existing beliefs.
+              </p>
+
+              <h4>Why This Matters</h4>
+              <ul>
+                <li>You may see fewer opposing viewpoints.</li>
+                <li>Extreme opinions may seem more common than they are.</li>
+                <li>Misinformation can spread inside closed communities.</li>
+                <li>Your confidence can grow even when your information is incomplete.</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Engagement, Virality, and Information Spread</h4>
+              <p>
+                Platforms often reward posts that generate reactions. A post can go viral because it is
+                emotional, shocking, funny, or controversial, not because it is accurate.
+              </p>
+              <p>
+                When you see viral content, ask whether it is spreading because it is well-supported
+                or because it triggers a strong emotional response.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Targeted Advertising and Personalized Content</h4>
+              <p>
+                Targeted ads are personalized based on information such as your searches, likes, location,
+                age, interests, and online behavior.
+              </p>
+              <p>
+                When you see an ad, ask: “Why am I seeing this, and what does it want me to do?”
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: How Platforms Influence Opinions and Behaviour</h4>
+              <p>
+                Platforms influence opinions by deciding what gets recommended, what gets hidden,
+                what becomes trending, and what appears credible. This does not mean every platform is
+                intentionally misleading you, but it does mean your feed is shaped by design choices.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Open a social media feed or recommendation page. Write down three recommended posts.
+                What do they have in common? Why might the platform have chosen them for you?
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>What is a filter bubble?</p>
+              <p><strong>Answer:</strong> When platforms mostly show content similar to what you already engage with.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 3</div>
+        <h3>AI-Generated Media</h3>
+        <p>Identify AI-generated images, videos, audio, articles, deepfakes, and synthetic media risks.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: What AI-Generated Media Includes</h4>
+              <p>
+                AI-generated media includes images, videos, voices, articles, comments, and posts created
+                partly or entirely by artificial intelligence. Some of it is harmless or useful, but it
+                can also be used to mislead.
+              </p>
+
+              <ul>
+                <li>AI-generated images</li>
+                <li>Deepfake videos</li>
+                <li>Fake audio clips</li>
+                <li>AI-written articles or comments</li>
+                <li>Synthetic social media profiles</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Identifying AI-Generated Articles and Text</h4>
+              <p>
+                AI-generated writing can sound polished and confident while still containing fake citations,
+                invented experts, unsupported claims, or broken links.
+              </p>
+
+              <h4>Possible Red Flags</h4>
+              <ul>
+                <li>Generic explanations</li>
+                <li>Confident claims with no evidence</li>
+                <li>Fake or broken citations</li>
+                <li>Vague references to “experts”</li>
+                <li>No original reporting</li>
+              </ul>
+
+              <p>
+                Instead of asking only “Was this written by AI?” ask:
+                “Are the claims, sources, and citations verifiable?”
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Deepfakes and Synthetic Media</h4>
+              <p>
+                A deepfake uses AI to make someone appear to say or do something they did not say or do.
+                Deepfakes can be especially harmful when they involve public figures, elections, schools,
+                emergencies, or accusations against people.
+              </p>
+
+              <h4>Warning Signs</h4>
+              <ul>
+                <li>Unnatural facial movement</li>
+                <li>Audio that does not match the mouth</li>
+                <li>Strange shadows or lighting</li>
+                <li>No reliable source confirming the clip</li>
+                <li>No full version available</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Detecting AI-Generated Images</h4>
+              <p>
+                Possible red flags include warped hands, strange teeth or eyes, blurry background faces,
+                nonsensical text on signs, inconsistent reflections, mismatched shadows, repeated patterns,
+                and missing source information.
+              </p>
+              <p>
+                These signs are not proof. Real photos can also contain motion blur, compression artifacts,
+                strange lighting, or editing errors.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Ethical Concerns Around AI-Created Media</h4>
+              <p>
+                AI-generated media raises ethical concerns because it can imitate real people, invent events,
+                damage reputations, create fake evidence, or spread misinformation at scale.
+              </p>
+              <p>
+                Be especially careful with AI media involving real people, private individuals, emergencies,
+                politics, health, or crime.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                A short video shows a public figure making a shocking statement, but the full video is
+                unavailable. What would you check before believing it?
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>What should a careful viewer do with a shocking short clip?</p>
+              <p><strong>Answer:</strong> Look for the full original video and reputable reporting.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 4</div>
+        <h3>Bias in Media and AI</h3>
+        <p>Recognize representation, stereotypes, confirmation bias, media habits, and bias in AI systems.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: Representation and Stereotypes</h4>
+              <p>
+                Media representation affects how people understand groups, communities, events, and social
+                issues. Repeated stereotypes can shape public perception, especially when certain groups
+                are shown in limited or negative ways.
+              </p>
+
+              <h4>Ask Yourself</h4>
+              <ul>
+                <li>Who is shown?</li>
+                <li>Who is left out?</li>
+                <li>How are different groups described?</li>
+                <li>Are people being reduced to stereotypes?</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Bias in AI Systems and Algorithms</h4>
+              <p>
+                AI systems learn from data. If the data contains bias, the AI system may repeat or amplify
+                that bias. Bias can appear in search results, facial recognition, recommendations, automated
+                decisions, and AI-generated responses.
+              </p>
+
+              <h4>Examples</h4>
+              <ul>
+                <li>Facial recognition working less accurately for some groups</li>
+                <li>Search results reinforcing stereotypes</li>
+                <li>Recommendation systems promoting one type of viewpoint</li>
+                <li>AI tools giving unfair or incomplete answers</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Confirmation Bias and Media Habits</h4>
+              <p>
+                Confirmation bias happens when people pay more attention to information that supports
+                what they already believe. Algorithms can strengthen this by recommending similar content.
+              </p>
+              <p>
+                A strong habit is to read reliable sources that challenge your first reaction, not only
+                sources that agree with you.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: How Media Shapes Public Perception</h4>
+              <p>
+                Media can shape how people understand groups and events through repeated framing, selective
+                examples, images, headlines, expert choices, and missing context.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Real-World Examples of Bias</h4>
+              <p>
+                Bias can appear when articles quote only one side, when images make one group look threatening,
+                when algorithms recommend extreme content, or when AI systems give different quality answers
+                about different communities.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Read two reliable sources about the same issue. Which one do you trust more? Why?
+                Are you reacting to evidence, framing, or your own existing beliefs?
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>How can bias appear in AI?</p>
+              <p><strong>Answer:</strong> AI can repeat bias found in the data it was trained on.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 5</div>
+        <h3>Case Studies</h3>
+        <p>Apply your skills to viral misinformation, manipulated media, major events, and AI ethics.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: Viral Misinformation Campaigns</h4>
+              <p>
+                Viral misinformation spreads quickly because people react emotionally and share before
+                checking. The faster something spreads, the harder it can be to correct.
+              </p>
+
+              <h4>Analyze It</h4>
+              <ul>
+                <li>What claim is being made?</li>
+                <li>Who shared it first?</li>
+                <li>What emotions does it trigger?</li>
+                <li>What evidence supports or challenges it?</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Manipulated or Misleading Media</h4>
+              <p>
+                Images and videos can be cropped, edited, staged, taken out of context, or generated by AI.
+                A real image can become misleading when paired with a false caption.
+              </p>
+
+              <h4>Media Literacy Move</h4>
+              <ul>
+                <li>Look for the original image or video.</li>
+                <li>Check when and where it was first posted.</li>
+                <li>Compare it with reports from trusted sources.</li>
+                <li>Be careful with screenshots that do not show context.</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Social Media and Major Events</h4>
+              <p>
+                During major events, social media can spread useful updates, but it can also spread rumors,
+                fake images, old videos, and misleading claims.
+              </p>
+              <p>
+                Before sharing, check the date, location, source, and whether reliable outlets confirm
+                the information.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Ethical Issues Involving AI and Digital Media</h4>
+              <p>
+                AI can generate fake evidence, impersonate people, produce persuasive misinformation, or
+                create content without clear disclosure. Ethical analysis asks who is harmed, who benefits,
+                what consent exists, and whether the audience is being misled.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Media Literacy Project Workflow</h4>
+              <ol>
+                <li>Pause before reacting.</li>
+                <li>Identify the main claim.</li>
+                <li>Check the source.</li>
+                <li>Check the evidence.</li>
+                <li>Inspect visuals or graphs.</li>
+                <li>Compare with independent sources.</li>
+                <li>Decide your confidence level.</li>
+                <li>Decide whether it should be shared.</li>
+              </ol>
+              <p>
+                Confidence labels can include verified, likely true, plausible but unconfirmed,
+                misleading, unsupported, likely false, or not enough evidence.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Scenario Practice:</strong>
+              <p>
+                A viral post contains a dramatic headline, a chart with no source, a realistic image,
+                a quote from an unnamed expert, and a link to a low-transparency website.
+              </p>
+              <ol>
+                <li>What are the red flags?</li>
+                <li>What should you verify first?</li>
+                <li>What confidence label would you give it?</li>
+                <li>Would you share it?</li>
+              </ol>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Which statement shows strong media literacy?</p>
+              <p><strong>Answer:</strong> “The claim is plausible, but I need stronger evidence before sharing it.”</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Final Check</div>
+        <h3>Intermediate Multiple-Choice Quiz</h3>
+        <p>Choose the best answer for each question.</p>
+
+        <form id="intermediateFinalQuiz">
+          <p><strong>1. An article can be factually accurate but still misleading if it:</strong></p>
+          <label class="quiz-option"><input type="radio" name="q1" value="1"> Selects only facts that support one interpretation</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="0"> Includes multiple perspectives</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="0"> Links to original documents</label>
+
+          <p><strong>2. What is a filter bubble?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q2" value="1"> When platforms mostly show content similar to what you already engage with</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="0"> When all sources agree on a topic</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="0"> When a website blocks ads</label>
+
+          <p><strong>3. Why can AI-generated media be risky?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q3" value="1"> It can make fake images, audio, or videos seem real</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="0"> It is always obviously fake</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="0"> It can only create cartoons</label>
+
+          <p><strong>4. How can bias appear in AI?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q4" value="1"> AI can repeat bias found in the data it was trained on</label>
+          <label class="quiz-option"><input type="radio" name="q4" value="0"> AI never makes biased decisions</label>
+          <label class="quiz-option"><input type="radio" name="q4" value="0"> Bias only exists in newspapers</label>
+
+          <p><strong>5. What should you do before sharing a dramatic video from a major event?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q5" value="1"> Check the date, location, source, and reliable confirmation</label>
+          <label class="quiz-option"><input type="radio" name="q5" value="0"> Share it immediately</label>
+          <label class="quiz-option"><input type="radio" name="q5" value="0"> Trust it if it has many comments</label>
+
+          <button type="button" class="primary-btn" onclick="gradeIntermediateQuiz()">Submit Final Quiz</button>
+        </form>
+
+        <div id="intermediateResult" class="quiz-result"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 MediaWise • Intermediate Course
+  </footer>
+
+  <script>
+    function gradeIntermediateQuiz() {
+      const form = document.getElementById("intermediateFinalQuiz");
+      const result = document.getElementById("intermediateResult");
+
+      let score = 0;
+      const total = 5;
+
+      for (let i = 1; i <= total; i++) {
+        const answer = form.querySelector(`input[name="q${i}"]:checked`);
+
+        if (answer) {
+          score += Number(answer.value);
+        }
+      }
+
+      result.style.display = "block";
+
+      if (score === total) {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Excellent work! You understand advanced media and AI literacy skills.</p>`;
+      } else if (score >= 3) {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Good progress. Review the modules you found challenging and try again.</p>`;
+      } else {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Keep practicing. Reopen the lessons above before moving on.</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

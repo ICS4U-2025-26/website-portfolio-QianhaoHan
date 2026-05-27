@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- title shown in the browser tab -->
+  <title>MediaWise</title>
+
+  <!-- connects Google Fonts (not default system fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- imports custom font (Inter) for styling text -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- links external CSS file for styling -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">MediaWise</div><!-- website name -->
+
+    <!-- anchor links that jump to sections on the website -->
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#courses">Courses</a>
+    </div>
+
+    <!-- button that directs user to quiz section -->
+    <a href="#quiz" class="nav-btn">Get Started</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-text"> <!-- left side text content -->
+      <div class="tag">Modern Media Literacy Platform</div> <!-- small label/tag above title -->
+
+      <h1>
+        Learn to <span>Think Critically</span> Online <!-- main headline -->
+      </h1>
+
+      <p>
+        Build the skills to identify misinformation, check sources, understand AI-generated media,
+        and navigate the digital world with confidence.
+      </p>
+
+      <!-- buttons for navigation actions -->
+      <div class="hero-buttons">
+        <a href="#quiz" class="primary-btn">Start Diagnostic Quiz</a>
+        <a href="#courses" class="secondary-btn">Explore Courses</a>
+      </div>
+     </div>
+
+      <!-- right side card showing learning tracks -->
+      <div class="hero-card">
+
+        <!-- top section of card showing title info -->
+        <div class="card-top">
+          <div class="level">Diagnostic Pathway</div>
+          <div class="progress">2 Tracks</div>
+        </div>
+        
+      <!-- clickable beginner course preview -->
+      <a href="beginner.html" class="course-link">
+        <div class="course">
+           <h3>Beginner Track</h3>
+           <p>For students starting with media literacy, misinformation, source checking, and AI basics.</p>
+        </div>
+      </a>
+
+      <!-- clickable intermediate course preview -->
+      <a href="intermediate.html" class="course-link">
+        <div class="course">
+          <h3>Intermediate Track</h3>
+          <p>For students ready to explore algorithms, AI-generated media, bias, and real-world case studies.</p>
+        </div>
+      </a>
+  </section>
+
+ <section id="quiz" class="quiz-section">
+
+    <!-- section title and description -->
+    <div class="section-title">
+      <h2>Diagnostic Quiz</h2>
+      <p>
+        Start with a short quiz. Your result will guide you into the beginner or intermediate learning path.
+      </p>
+    </div>
+
+    <!-- feature cards explaining benefits of quiz -->
+    <div class="quiz-features">
+
+      <div class="feature-card">
+        <div class="feature-icon">✓</div>
+        <h3>Personalized Results</h3>
+        <p>Get matched with the learning path that fits your current skills.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Targeted Learning</h3>
+        <p>Focus on the media literacy topics you need most.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Track Progress</h3>
+        <p>See how your confidence grows as you move through the course.</p>
+      </div>
+
+    </div>
+
+    <!-- main quiz button card -->
+    <div class="quiz-card">
+      <h3>Find Your Starting Level</h3>
+      <p>
+        Answer questions about media bias, misinformation, source evaluation, AI use, and online influence.
+      </p>
+      <a href="quiz.html" class="primary-btn">Begin Quiz</a>
+    </div>
+
+  </section>
+
+  <section id="courses" class="courses-section">
+
+    <!-- section title -->
+    <div class="section-title">
+      <h2>Learning Paths</h2>
+      <p>
+        Each course is organized based on your diagnostic quiz result.
+      </p>
+    </div>
+
+    <!-- grid layout for course cards -->
+    <div class="course-grid">
+
+      <div class="path-card">
+
+        <!-- label showing this is beginner path -->
+        <div class="tag">Beginner Result</div>
+
+        <h3>Beginner Course</h3>
+
+        <p>Start with the core skills needed to understand media, misinformation, and AI responsibly.</p>
+
+        <!-- dropdown list of beginner topics -->
+        <ul class="dropdown-list">
+
+          <li class="dropdown-item">
+            <details>
+              <!-- clickable dropdown title -->
+              <summary>Media Literacy Basics</summary>
+
+              <!-- hidden content revealed when clicked -->
+              <ul>
+                <li>What media literacy means</li>
+                <li>Different types of media</li>
+                <li>Purpose and audience</li>
+                <li>Persuasion techniques</li>
+                <li>Fact vs opinion</li>
+              </ul>
+            </details>
+          </li>
+
+          <li class="dropdown-item">
+            <details>
+              <summary>Misinformation Basics</summary>
+              <ul>
+                <li>What misinformation is</li>
+                <li>How it spreads online</li>
+                <li>Clickbait headlines</li>
+                <li>Confirmation bias</li>
+              </ul>
+            </details>
+          </li>
+
+        </ul>
+
+        <!-- link to full beginner course page -->
+        <a href="beginner.html" class="course-link">View Beginner Course →</a>
+      </div>
+
+      <div class="path-card">
+
+        <!-- label showing this is intermediate path -->
+        <div class="tag">Intermediate Result</div>
+
+        <h3>Intermediate Course</h3>
+
+        <p>Go deeper into source evaluation, algorithms, AI-generated media, bias, and case studies.</p>
+
+        <!-- dropdown list of intermediate topics -->
+        <ul>
+
+          <li class="dropdown-item">
+            <details>
+              <summary>Advanced Source Evaluation</summary>
+              <ul>
+                <li>Bias and framing</li>
+                <li>Reliable vs unreliable sources</li>
+              </ul>
+            </details>
+          </li>
+
+          <li class="dropdown-item">
+            <details>
+              <summary>Algorithms and Influence</summary>
+              <ul>
+                <li>How algorithms decide content</li>
+                <li>Echo chambers</li>
+                <li>Personalized feeds</li>
+              </ul>
+            </details>
+          </li>
+
+        </ul>
+
+        <!-- link to full intermediate course page -->
+        <a href="intermediate.html" class="course-link">View Intermediate Course →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 MediaWise • Built for modern digital education
+  </footer>
+
+</body>
+</html>

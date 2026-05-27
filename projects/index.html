@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects | Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Site Header: Contains logo, hamburger menu for mobile, and main navigation with dropdown -->
+  <header class="site-header">
+    <div class="header-content">
+      <a href="../index.html" class="logo">My Portfolio</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="index.html" class="nav-link active">My Projects</a>
+            <ul class="dropdown">
+              <li><a href="unit1.html">Unit 1</a></li>
+              <li><a href="unit2.html">Unit 2</a></li>
+              <li><a href="unit3.html">Unit 3</a></li>
+              <li><a href="unit4.html">Unit 4</a></li>
+              <li><a href="unit5.html">Unit 5</a></li>
+              <li><a href="unit6.html">Unit 6</a></li>
+            </ul>
+          </li>
+          <li><a href="../resources.html" class="nav-link">Resources</a></li>
+          <li><a href="../about.html" class="nav-link">About Me</a></li>
+          <li><a href="../gaming.html" class="nav-link">Gaming Corner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Page Header: Title and description for the projects page -->
+    <div class="page-header">
+      <h1>My Projects</h1>
+      <p>A collection of all the projects I've completed throughout my ICS4U course. Each unit focuses on different skills and technologies.</p>
+    </div>
+
+    <!-- Projects Table: Displays all projects with name, unit, date, technologies, and links -->
+    <div class="projects-table-wrapper">
+      <table class="projects-table">
+        <caption>Overview of all projects completed in ICS4U, organized by unit and date</caption>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Unit</th>
+            <th>Date</th>
+            <th>Technologies</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variables, Loops & Conditionals Review</td>
+            <td>Unit 1</td>
+            <td>September 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit1.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Arrays and Methods Review</td>
+            <td>Unit 1</td>
+            <td>September 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit1.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>JavaScript Fundamentals</td>
+            <td>Unit 2</td>
+            <td>October 2025</td>
+            <td>HTML, CSS, JavaScript</td>
+            <td><a href="unit2.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>DOM Manipulation & Events</td>
+            <td>Unit 2</td>
+            <td>November 2025</td>
+            <td>HTML, CSS, JavaScript</td>
+            <td><a href="unit2.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Sorting & Searching Algorithms</td>
+            <td>Unit 3</td>
+            <td>December 2025</td>
+            <td>Java, Python</td>
+            <td><a href="unit3.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Intro to Machine Learning</td>
+            <td>Unit 3</td>
+            <td>January 2026</td>
+            <td>Python, ML Libraries</td>
+            <td><a href="unit3.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Quantitative Analyst Career Research</td>
+            <td>Unit 5</td>
+            <td>May 2026</td>
+            <td>Computer Science Careers, Ethics, Privacy</td>
+            <td><a href="unit5.html">View Project</a></td>
+          </tr>
+          <tr>
+            <td>Snapchat Privacy Controversy Discussion</td>
+            <td>Unit 5</td>
+            <td>May 2026</td>
+            <td>Technology Ethics, Privacy, ACM Code of Ethics</td>
+            <td><a href="unit5.html">View Project</a></td>
+          </tr>
+
+          <tr>
+            <td>MediaWise Bobcats' Den Final Project</td>
+            <td>Unit 6</td>
+            <td>May 2026</td>
+            <td>HTML, CSS, JavaScript, Chrome Extension, Node.js, Express, OpenAI API</td>
+            <td><a href="unit6.html">View Project</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quick Links Section: Card grid for navigating to individual unit pages -->
+    <section class="quick-links" style="padding-top: 0;">
+      <h2>Browse by Unit</h2>
+      <div class="cards-grid">
+        <a href="unit1.html" class="card">
+          <div class="card-icon">01</div>
+          <h3>Unit 1: Programming Fundamentals</h3>
+          <p>Review of ICS3U: variables, loops, conditionals, arrays, and methods.</p>
+        </a>
+        <a href="unit2.html" class="card">
+          <div class="card-icon">02</div>
+          <h3>Unit 2: Intro to JavaScript</h3>
+          <p>JavaScript fundamentals, DOM manipulation, and event handling.</p>
+        </a>
+        <a href="unit3.html" class="card">
+          <div class="card-icon">03</div>
+          <h3>Unit 3: Algorithms, ML & AI</h3>
+          <p>Sorting, searching algorithms, machine learning, and artificial intelligence.</p>
+        </a>
+        <a href="unit4.html" class="card">
+          <div class="card-icon">04</div>
+          <h3>Unit 4: Object-Oriented Programming</h3>
+          <p>Classes, objects, inheritance, polymorphism, and design patterns.</p>
+        </a>
+        <a href="unit5.html" class="card">
+          <div class="card-icon">05</div>
+          <h3>Unit 5: Topics in Computer Science</h3>
+          <p>Career research on quantitative analysts and an ethics discussion on privacy in technology.</p>
+        </a>
+
+        <a href="unit6.html" class="card">
+          <div class="card-icon">06</div>
+          <h3>Unit 6: Bobcats' Den Final Project</h3>
+          <p>MediaWise website and Chrome extension for media literacy and responsible technology use.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>ICS4U Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Button: Switches between light and dark mode -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+
+  <script src="../script.js"></script>
+</body>
+</html>

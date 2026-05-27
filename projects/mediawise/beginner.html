@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Beginner Course | MediaWise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .lesson-content {
+      margin-top: 1rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .lesson-content h4 {
+      color: white;
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .lesson-content p {
+      margin-bottom: 1rem;
+    }
+
+    .lesson-content ul,
+    .lesson-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .lesson-content li {
+      border-bottom: none;
+      padding: 0.35rem 0;
+      list-style: disc;
+    }
+
+    .lesson-content ol li {
+      list-style: decimal;
+    }
+
+    .lesson-box,
+    .example-box,
+    .activity-box,
+    .quick-check-box {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lesson-box strong,
+    .example-box strong,
+    .activity-box strong,
+    .quick-check-box strong {
+      color: #f8fafc;
+    }
+
+    .quiz-option {
+      display: block;
+      margin: 0.8rem 0;
+      color: #e2e8f0;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .quiz-result {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="back-btn">← Back</a>
+
+  <section class="course-header">
+
+    <div class="course-intro">
+      <div class="tag">Beginner Result</div>
+
+      <h1>
+        Beginner <span>Media & AI Literacy</span>
+      </h1>
+
+      <p>
+        Learn the foundations of media literacy, misinformation, source checking,
+        and responsible AI use through interactive beginner-friendly lessons.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#modules" class="primary-btn">Start Learning</a>
+        <a href="intermediate.html" class="secondary-btn">Intermediate Track</a>
+      </div>
+    </div>
+
+    <div class="info-cards">
+
+      <div class="info-card">
+        <h3>Course Goal</h3>
+        <p>
+          Build the ability to think critically online, recognize misleading content,
+          and evaluate information confidently.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Modules</h3>
+        <p>
+          5 learning modules covering misinformation, source evaluation,
+          media literacy, and AI basics.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Final Quiz</h3>
+        <p>
+          Complete a beginner assessment at the end of the course to test your understanding.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="modules" class="courses-section">
+    <div class="section-title">
+      <h2>Beginner Course Modules</h2>
+      <p>Click each module to open detailed lessons, examples, activities, and quick checks.</p>
+    </div>
+
+    <div class="course-grid">
+
+      <div class="path-card">
+        <div class="tag">Module 1</div>
+        <h3>Media Literacy Basics</h3>
+        <p>Learn what media literacy means and how media messages shape what people think, feel, and do.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: What Media Literacy Means</h4>
+              <p>
+                Media literacy means being able to understand, question, and evaluate the media you see.
+                This includes news articles, social media posts, videos, images, memes, podcasts, charts,
+                advertisements, and AI-generated content.
+              </p>
+              <p>
+                Being media literate does not mean distrusting everything. It means learning how to pause
+                and ask useful questions before accepting something as true.
+              </p>
+
+              <h4>Learning Goals</h4>
+              <ul>
+                <li>Explain what media literacy means.</li>
+                <li>Understand that misleading content is not always completely false.</li>
+                <li>Recognize how media can inform, entertain, persuade, or sell.</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Different Types of Media</h4>
+              <p>
+                Media can appear as news articles, social media posts, ads, blogs, videos, podcasts,
+                memes, screenshots, charts, and AI-generated responses. Each type of media has its own
+                purpose and style.
+              </p>
+              <p>
+                A news article might aim to inform, while an advertisement aims to persuade you to buy
+                something. A meme may be funny, but it can still spread a political or social message.
+              </p>
+
+              <h4>Questions to Ask</h4>
+              <ul>
+                <li>What type of media is this?</li>
+                <li>Who created it?</li>
+                <li>What does the creator want me to think, feel, or do?</li>
+                <li>Is it trying to inform, entertain, persuade, or sell?</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Target Audience and Purpose</h4>
+              <p>
+                Every media message is made for an audience. Creators choose words, images, sounds,
+                examples, and headlines that appeal to that audience.
+              </p>
+              <p>
+                For example, a video made for teenagers may use humor, fast editing, and popular music.
+                A political ad may use serious music and emotional images to make an issue feel urgent.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Emotional Language and Persuasion</h4>
+              <p>
+                Emotional language is often used to make people angry, afraid, excited, or shocked.
+                Strong emotion does not automatically mean something is false, but it is a reason to slow down.
+              </p>
+
+              <h4>Loaded Words to Watch For</h4>
+              <ul>
+                <li>Greedy</li>
+                <li>Reckless</li>
+                <li>Lazy</li>
+                <li>Heroic</li>
+                <li>Radical</li>
+                <li>Betray</li>
+                <li>Attack</li>
+                <li>Disaster</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Fact, Opinion, and Entertainment</h4>
+              <p>
+                A fact can be checked. An opinion expresses a belief or judgment. Entertainment is designed
+                mainly to amuse or engage an audience. Many media messages mix all three.
+              </p>
+
+              <ul>
+                <li><strong>Fact:</strong> “The city council voted 8–3 to approve the policy.”</li>
+                <li><strong>Opinion:</strong> “The policy is unfair and unnecessary.”</li>
+                <li><strong>Interpretation:</strong> “The vote shows leaders are prioritizing environmental issues.”</li>
+                <li><strong>Entertainment:</strong> A comedy video pretending to report news.</li>
+              </ul>
+            </div>
+
+            <div class="example-box">
+              <strong>Example:</strong>
+              <p>These headlines could describe the same event:</p>
+              <ol>
+                <li>“City Launches New Climate Plan”</li>
+                <li>“City Finally Takes Bold Action on Climate”</li>
+                <li>“City Punishes Families With Costly Climate Rules”</li>
+              </ol>
+              <p>
+                The first is neutral, the second suggests approval, and the third suggests anger.
+                This is media framing.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>Decide whether each sentence is a fact, opinion, or interpretation:</p>
+              <ol>
+                <li>“The bill passed by a vote of 52–48.”</li>
+                <li>“The reckless bill will hurt ordinary people.”</li>
+                <li>“Supporters say the bill will reduce costs.”</li>
+                <li>“The close vote shows the country is divided.”</li>
+              </ol>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Which question is most useful when practicing media literacy?</p>
+              <p><strong>Answer:</strong> “Who made this, and what evidence do they provide?”</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 2</div>
+        <h3>Misinformation Basics</h3>
+        <p>Learn what misinformation and disinformation are, why they spread, and how clickbait works.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: Misinformation vs. Disinformation</h4>
+              <p>
+                Misinformation is false or inaccurate information that may be shared by mistake.
+                Disinformation is false information shared on purpose to mislead people.
+              </p>
+
+              <ul>
+                <li><strong>Misinformation:</strong> Someone shares an old photo because they think it is from today.</li>
+                <li><strong>Disinformation:</strong> Someone knowingly posts a fake image to influence people.</li>
+              </ul>
+
+              <p>
+                Both can be harmful because people may believe them, act on them, or share them further.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Common Examples Online</h4>
+              <p>
+                Misinformation can appear as fake screenshots, misleading headlines, old videos reposted
+                as new, fake quotes, AI-generated images, edited graphs, or posts that leave out important context.
+              </p>
+              <p>
+                A post does not need to be completely fake to be misleading. Sometimes the problem is what
+                the post leaves out.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Why False Information Spreads Quickly</h4>
+              <p>
+                False information often spreads because it is emotional, surprising, simple, or confirms
+                what people already believe. Social media platforms can also reward posts that get strong
+                reactions, even when those posts are misleading.
+              </p>
+
+              <h4>Common Triggers</h4>
+              <ul>
+                <li>Fear</li>
+                <li>Anger</li>
+                <li>Shock</li>
+                <li>Excitement</li>
+                <li>A feeling that “this proves I was right”</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Clickbait and Misleading Headlines</h4>
+              <p>
+                Clickbait uses dramatic or incomplete headlines to make people click. A headline can be
+                technically connected to a story but still exaggerate what the evidence shows.
+              </p>
+              <p>
+                Before reacting to a headline, read past it. Check whether the article actually supports
+                the claim in the headline.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Introduction to Confirmation Bias</h4>
+              <p>
+                Confirmation bias happens when people pay more attention to information that supports
+                what they already believe and ignore information that challenges them.
+              </p>
+              <p>
+                A useful question is: “Would I still believe this if it disagreed with my opinion?”
+              </p>
+            </div>
+
+            <div class="example-box">
+              <strong>Example:</strong>
+              <p>
+                A post says, “This video proves the mayor hates students!” The clip is only 8 seconds long.
+                The full speech is not linked. This may be misleading because the quote could be taken out
+                of context.
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Find a headline online that seems dramatic. Ask: What emotion is it trying to create?
+                Does the article provide evidence, or does it mainly rely on reaction?
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Why can false information spread quickly?</p>
+              <p><strong>Answer:</strong> It often creates strong emotions and confirms what people already believe.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 3</div>
+        <h3>Checking Sources</h3>
+        <p>Learn how to identify trustworthy sources, check evidence, and cross-reference claims.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: What Is a Source?</h4>
+              <p>
+                A source is where information comes from. It might be a news article, government report,
+                scientific study, company website, personal blog, social media post, screenshot, video,
+                or AI-generated summary.
+              </p>
+              <p>
+                Before trusting a source, ask who created it, when it was published, what evidence it
+                provides, and whether it is trying to sell or promote something.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Identifying Trustworthy Websites and Authors</h4>
+              <p>
+                Stronger sources are transparent. They usually tell you who wrote the information,
+                what organization published it, when it was published, and what evidence supports it.
+              </p>
+
+              <h4>Signs of a Stronger Source</h4>
+              <ul>
+                <li>A named author or organization</li>
+                <li>A clear publication date</li>
+                <li>Links to evidence</li>
+                <li>Expert input</li>
+                <li>Transparent methods</li>
+                <li>Corrections or update information</li>
+                <li>Clear ownership</li>
+                <li>A record of reliable reporting</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Checking Dates and Evidence</h4>
+              <p>
+                Old information can be misleading if it is presented as new. Always check when something
+                was published and whether it links to original evidence.
+              </p>
+
+              <h4>Questions to Ask</h4>
+              <ul>
+                <li>When was this published?</li>
+                <li>Is the information still current?</li>
+                <li>Does the article link to evidence?</li>
+                <li>Can I find the original study, report, or document?</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Cross-Referencing Multiple Sources</h4>
+              <p>
+                Cross-referencing means checking whether other reliable sources report the same information.
+                If only one unknown website is making a major claim, be careful.
+              </p>
+              <p>
+                For important claims, look for the original or primary source. Primary sources include
+                government datasets, court documents, scientific studies, official reports, and full speeches.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Fake Experts and Unreliable Claims</h4>
+              <p>
+                A fake expert may have no real credentials, no traceable background, or no connection to
+                the topic. A conflict of interest happens when a person or organization may benefit from
+                the conclusion they are presenting.
+              </p>
+              <p>
+                A company-funded study is not automatically false, but you should check whether the methods
+                are fair and whether independent sources agree.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 6: Basic Fact-Checking Strategies</h4>
+              <ul>
+                <li>Search the claim in another tab.</li>
+                <li>Look for the original source.</li>
+                <li>Check the date and author.</li>
+                <li>Compare with trusted sources.</li>
+                <li>Look for fact-checking organizations that have covered it.</li>
+                <li>Do not rely on screenshots alone.</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>Rank these sources from strongest to weakest for a claim about unemployment rates:</p>
+              <ol>
+                <li>National statistics agency</li>
+                <li>Newspaper article summarizing official government data</li>
+                <li>Influencer post with no citation</li>
+                <li>Screenshot of a chart with no source</li>
+              </ol>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Which source is usually strongest for checking a claim about a new law?</p>
+              <p><strong>Answer:</strong> The official government website or legal document.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 4</div>
+        <h3>AI Basics</h3>
+        <p>Learn what AI is, where it appears in daily life, and how to recognize AI-generated content.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: What Artificial Intelligence Is</h4>
+              <p>
+                Artificial intelligence is technology that can perform tasks that usually require human
+                thinking, such as recognizing patterns, answering questions, generating images, translating
+                languages, or recommending content.
+              </p>
+              <p>
+                AI does not think exactly like a person. It uses patterns from data to make predictions,
+                generate responses, or identify likely results.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: Everyday Examples of AI</h4>
+              <ul>
+                <li>Recommendation systems on YouTube, TikTok, Netflix, or Spotify</li>
+                <li>Chatbots and virtual assistants</li>
+                <li>Facial recognition tools</li>
+                <li>Autocorrect and translation tools</li>
+                <li>Search engines and personalized ads</li>
+                <li>AI image, video, or text generators</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Human-Created vs. AI-Generated Content</h4>
+              <p>
+                Some content is made by humans, some is made by AI, and some uses both. AI-generated
+                content can look polished and realistic, but it may still contain mistakes.
+              </p>
+              <p>
+                Instead of only asking “Was this made by AI?” ask “Can I verify this information?”
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Benefits of AI</h4>
+              <p>
+                AI can help people brainstorm ideas, summarize information, translate text, organize notes,
+                explain difficult topics, and create practice questions.
+              </p>
+              <p>
+                These uses can be helpful when AI supports learning rather than replacing your thinking.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Limitations of AI</h4>
+              <p>
+                AI can produce inaccurate information, repeat bias, invent sources, or create realistic
+                fake images and text.
+              </p>
+
+              <h4>Possible Warning Signs in AI Text</h4>
+              <ul>
+                <li>Very generic language</li>
+                <li>Few or no sources</li>
+                <li>Confident claims without evidence</li>
+                <li>Fake citations</li>
+                <li>Repeated sentence patterns</li>
+              </ul>
+
+              <h4>Possible Warning Signs in AI Images</h4>
+              <ul>
+                <li>Distorted hands or fingers</li>
+                <li>Unreadable background text</li>
+                <li>Strange reflections or shadows</li>
+                <li>Blurry background faces</li>
+                <li>No clear source or photographer</li>
+              </ul>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Look at a piece of online content and ask: Could AI have helped create this?
+                What evidence would I need before trusting it?
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Why is it not enough to say “this sounds like AI”?</p>
+              <p><strong>Answer:</strong> Style alone does not prove AI authorship; you still need to check evidence and sources.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Module 5</div>
+        <h3>Responsible AI Use</h3>
+        <p>Learn ethical habits for using AI tools in school, daily life, and online media.</p>
+
+        <details>
+          <summary>Open detailed lessons</summary>
+
+          <div class="lesson-content">
+
+            <div class="lesson-box">
+              <h4>Lesson 1: Ethical AI Use</h4>
+              <p>
+                AI can be useful for brainstorming, explaining ideas, summarizing information, and practicing
+                skills. But responsible AI use means being honest about how you use it and checking important
+                information before trusting it.
+              </p>
+
+              <ul>
+                <li>Use AI as a helper, not a replacement for your thinking.</li>
+                <li>Check facts with reliable sources.</li>
+                <li>Follow your teacher’s or organization’s AI rules.</li>
+                <li>Do not use AI to deceive people.</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 2: AI Can Be Inaccurate or Biased</h4>
+              <p>
+                AI tools can give answers that sound confident but are wrong. They can also repeat bias
+                from the data they were trained on.
+              </p>
+              <p>
+                When AI gives an important claim, look for real sources. If the claim affects health,
+                safety, schoolwork, money, or someone’s reputation, verify it carefully.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 3: Plagiarism and Schoolwork</h4>
+              <p>
+                It is dishonest to submit AI-generated work as if you created it entirely yourself.
+                Better uses include asking AI to explain a concept, generate practice questions, or help
+                brainstorm ideas before you write in your own words.
+              </p>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 4: Proper Use of AI Assistance</h4>
+              <p>
+                Responsible AI use means being clear about what parts of your work are yours and what parts
+                were supported by AI. You should still understand the material and be able to explain your choices.
+              </p>
+              <ul>
+                <li>Use AI to study, not to cheat.</li>
+                <li>Rewrite ideas in your own words.</li>
+                <li>Check facts before including them.</li>
+                <li>Ask your teacher what is allowed.</li>
+              </ul>
+            </div>
+
+            <div class="lesson-box">
+              <h4>Lesson 5: Critical Thinking With AI Media</h4>
+              <p>
+                When interacting with AI-generated media, ask whether the claims are specific, whether
+                the sources are real, whether the evidence is strong, and whether the content might be
+                missing important context.
+              </p>
+              <p>
+                A strong media-literate response sounds like: “This might be true, but I need better
+                evidence before sharing it.”
+              </p>
+            </div>
+
+            <div class="activity-box">
+              <strong>Activity:</strong>
+              <p>
+                Imagine AI gives you a statistic for a school project. What steps should you take before
+                using it? List at least three verification steps.
+              </p>
+            </div>
+
+            <div class="quick-check-box">
+              <strong>Quick Check:</strong>
+              <p>Which is a responsible way to use AI?</p>
+              <p><strong>Answer:</strong> Use AI to brainstorm, then check facts and write in your own words.</p>
+            </div>
+
+          </div>
+        </details>
+      </div>
+
+      <div class="path-card">
+        <div class="tag">Final Check</div>
+        <h3>Beginner Multiple-Choice Quiz</h3>
+        <p>Choose the best answer for each question.</p>
+
+        <form id="beginnerFinalQuiz">
+          <p><strong>1. Which headline is most neutral?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q1" value="0"> “Greedy Officials Betray Local Families”</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="1"> “City Council Approves New Parking Fee”</label>
+          <label class="quiz-option"><input type="radio" name="q1" value="0"> “Out-of-Touch Leaders Attack Drivers Again”</label>
+
+          <p><strong>2. What is a main concern if an article quotes only one side?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q2" value="1"> The article may be one-sided</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="0"> The article is automatically fake</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="0"> The article must be AI-generated</label>
+
+          <p><strong>3. Which source is usually strongest for checking national unemployment?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q3" value="1"> A government statistics agency</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="0"> A meme account</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="0"> An anonymous screenshot</label>
+
+          <p><strong>4. What should you do before sharing a shocking screenshot?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q4" value="0"> Share it immediately</label>
+          <label class="quiz-option"><input type="radio" name="q4" value="1"> Search for the original post or reliable reporting</label>
+          <label class="quiz-option"><input type="radio" name="q4" value="0"> Trust it if it looks professional</label>
+
+          <p><strong>5. Which is a responsible way to use AI?</strong></p>
+          <label class="quiz-option"><input type="radio" name="q5" value="1"> Use AI to brainstorm, then verify facts and write in your own words</label>
+          <label class="quiz-option"><input type="radio" name="q5" value="0"> Copy AI answers without checking them</label>
+          <label class="quiz-option"><input type="radio" name="q5" value="0"> Believe every AI answer because it sounds confident</label>
+
+          <button type="button" class="primary-btn" onclick="gradeBeginnerQuiz()">Submit Final Quiz</button>
+        </form>
+
+        <div id="beginnerResult" class="quiz-result"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 MediaWise • Beginner Course
+  </footer>
+
+  <script>
+    function gradeBeginnerQuiz() {
+      const form = document.getElementById("beginnerFinalQuiz");
+      const result = document.getElementById("beginnerResult");
+
+      let score = 0;
+      const total = 5;
+
+      for (let i = 1; i <= total; i++) {
+        const answer = form.querySelector(`input[name="q${i}"]:checked`);
+
+        if (answer) {
+          score += Number(answer.value);
+        }
+      }
+
+      result.style.display = "block";
+
+      if (score === total) {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Excellent work! You understand the beginner media and AI literacy skills.</p>`;
+      } else if (score >= 3) {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Good progress. Review the modules you found challenging and try again.</p>`;
+      } else {
+        result.innerHTML = `<h3>Score: ${score}/${total}</h3><p>Keep practicing. Reopen the lessons above before moving on.</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

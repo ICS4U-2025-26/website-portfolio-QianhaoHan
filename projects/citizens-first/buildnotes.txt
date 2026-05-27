@@ -1,0 +1,22 @@
+Motivation:
+I founded my non-profit Tech2gether after seeing several teams around me in the GTA that almost had to 
+shut down—not because students lacked talent or commitment, but because they ran out of funding for 
+registration fees, parts, travel, and basic equipment. 
+
+The Budget & Access Planner (by Tech2gether) is practical tool that helps teams both plan a season 
+financially and get targeted suggestions for sponsorships and grants that can support them. 
+
+This project aims to address the broader social issue of unequal access to STEM education. Robotics 
+is one of the most effective hands-on exposures to STEM for high school students, but when participation 
+is limited by a team’s ability to pay thousands of dollars per season, students, especially girls, from 
+low-income communities lose the opportunity to build skills, confidence and a real sense of belonging in 
+STEM fields. High school is a key stage when students discover what they want to pursue in the future, so 
+improving access to programs like robotics can directly increase the likelihood that students continue 
+pursuing STEM in post-secondary education and future careers.
+
+
+Resources used:
+AI: DeepSeek
+https://www.navbar.gallery/ - inspo for my navbar
+
+
