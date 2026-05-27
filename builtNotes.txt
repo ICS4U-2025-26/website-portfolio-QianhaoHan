@@ -1,0 +1,26 @@
+Build Notes
+
+AI Use:
+V0 - for setting up an outline
+ChatGPT & DeepSeek - for debugging
+
+Resources: 
+- MDN web docs
+(especially this page for my demo in the unit 3 page: 
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
+- Javascript.info
+
+Unit 5 page update:
+- Added projects/unit5.html for Topics in Computer Science.
+- Added a Careers in CS section on quantitative analysts using an uploaded presentation image.
+- Added an Ethics & Sustainability section about the Snapchat privacy controversy.
+- Sources linked directly on the Unit 5 page include the Bureau of Labor Statistics, Jane Street job postings, and the FTC Snapchat settlement article.
+
+
+Unit 6 / Bobcats' Den Final Project Update:
+- Added MediaWise final project page at projects/unit6.html.
+- Embedded the MediaWise website from projects/mediawise/index.html.
+- Added extension screen recording at videos/mediawise-extension-demo.mov.
+- Added full final reflection PDF at files/mediawise-final-reflection.pdf.
+- External technologies documented for the project include Chrome Extension Manifest V3, Node.js, Express, dotenv, and the OpenAI API. API keys should remain private and stored in a .env file, not in client-side code.
+- AI Attribution: ChatGPT and Claude were used for getting started, debugging, and improving structure, especially for extension/backend concepts and code organization.
